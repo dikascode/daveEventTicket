@@ -40,22 +40,33 @@
     <div class="col-lg-5" style="margin-bottom: 2%;">
         <div class="ticketClass">
             <h4>Ticket Order</h4>
-            <?php 
-                $j = 1;
+            <?php
 
-                foreach($viewmodel as $item):
-                if($_SESSION['Tnumber_'.$j.''] > 0):
+            $ticket_value = $_SESSION['ticket_data'];
+                
+
+                foreach($ticket_value as $key => $value):
+
+                if($value > 0):
+
+                
             
             ?>
             <div class="row priceCat">
-                <div class="col-md-6 col-sm-6"><?php echo $_SESSION['Tnumber_'.$j.'']. ' x ' .  $item['class']; ?></div>
-                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($item['price']*$_SESSION['Tnumber_'.$j.'']); ?></div>
+                <div class="col-md-6 col-sm-6"><?php echo $value. ' x ' .  $viewmodel[$key - 1]['class']; ?></div>
+                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($value*$_SESSION['ticket_price'][$key]); ?></div>
                 
             </div> <hr />
             <?php 
-                 $j++;
                 endif; 
-                endforeach;?>
+                endforeach;
+
+                
+
+                // print_r($_SESSION['ticket_data']);
+                // print_r($_SESSION['ticket_price']);
+                
+            ?>
              <div class="row priceCat">
                 <div class="col-md-6 col-sm-6">SUBTOTAL</div>
                 <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($_SESSION['total_price']); ?></div> 
@@ -63,7 +74,7 @@
 
             <div class="row priceCat">
                 <div class="col-md-6 col-sm-6">Service Charge</div>
-                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($service_charge = $_SESSION['total_price'] * 0.005); ?></div> 
+                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($service_charge = $_SESSION['total_price'] * 0.002); ?></div> 
             </div>
             <span style="font-size: 10px;">(Online Payment Convenience Fee)</span> <hr />
 

@@ -19,7 +19,8 @@
     
     <link rel="stylesheet" href="assets/css/flaticon.css">
     <link rel="stylesheet" href="assets/css/icomoon.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	
 
 	<!-- <link rel="stylesheet" href="assets/css/bootstrap.css"> -->
 	
@@ -64,9 +65,9 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active"><a href="<?php echo ROOT_URL ?>" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="team.html" class="nav-link">Our team</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        	<li class="nav-item"><a href="<?php echo ROOT_URL ?>?controller=about" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="<?php echo ROOT_URL ?>?controller=team" class="nav-link">Our team</a></li>
+	          <li class="nav-item"><a href="<?php echo ROOT_URL ?>?controller=contact" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -111,30 +112,20 @@
 											<div class="col-md-4 mb-md-0 mb-4">
 												<h2 class="footer-heading">Services</h2>
 												<ul class="list-unstyled">
-						              <li><a href="#" class="py-1 d-block">Construction</a></li>
-						              <li><a href="#" class="py-1 d-block">House Renovation</a></li>
-						              <li><a href="#" class="py-1 d-block">Painting</a></li>
-						              <li><a href="#" class="py-1 d-block">Arhictecture Design</a></li>
-						            </ul>
+												<li><a href="#" class="py-1 d-block">e-Ticket Sale</a></li>
+												<li><a href="#" class="py-1 d-block">Events Management</a></li>
+												
+												</ul>
 											</div>
-											<div class="col-md-4 mb-md-0 mb-4">
-												<h2 class="footer-heading">About</h2>
-												<ul class="list-unstyled">
-						              <li><a href="#" class="py-1 d-block">Staff</a></li>
-						              <li><a href="#" class="py-1 d-block">Team</a></li>
-						              <li><a href="#" class="py-1 d-block">Careers</a></li>
-						              <li><a href="#" class="py-1 d-block">Blog</a></li>
-						            </ul>
-											</div>
-											<div class="col-md-4 mb-md-0 mb-4">
-												<h2 class="footer-heading">Resources</h2>
-												<ul class="list-unstyled">
-						              <li><a href="#" class="py-1 d-block">Security</a></li>
-						              <li><a href="#" class="py-1 d-block">Global</a></li>
-						              <li><a href="#" class="py-1 d-block">Charts</a></li>
-						              <li><a href="#" class="py-1 d-block">Privacy</a></li>
-						            </ul>
-											</div>
+									<div class="col-md-4 mb-md-0 mb-4">
+											<h2 class="footer-heading">About</h2>
+											<ul class="list-unstyled">
+										
+												<li><a href="<?php echo ROOT_URL ?>?controller=team" class="py-1 d-block">Team</a></li>
+										
+											</ul>
+									</div>
+								
 										</div>
 									</div>
 								</div>

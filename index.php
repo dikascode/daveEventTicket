@@ -14,10 +14,18 @@ ob_start();
     require('controllers/home.php');
     require('controllers/events.php');
     require('controllers/users.php');
+    require('controllers/transactions.php');
+    require('controllers/about.php');
+    require('controllers/team.php');
+    require('controllers/contact.php');
 
     require('models/home.php');
     require('models/user.php');
     require('models/event.php');
+    require('models/transaction.php');
+    require('models/about.php');
+    require('models/team.php');
+    require('models/contact.php');
 
 
 
@@ -62,7 +70,7 @@ $rave = <<<DELIMETER
         customer_phone: cust_number,
         currency: "NGN",
         cust_name: cust_name,
-      	txref: "OURMARKET"+ Math.random(),
+      	txref: "YOUCONNECT"+ Math.random(),
       	meta: [{metaname:"flightID", metavalue: "AP1234"}],
         onclose:function(response) {
         },
@@ -71,7 +79,7 @@ $rave = <<<DELIMETER
           amount = {$_SESSION['ticket_total_price']};
           txref = response.tx.txRef, chargeResponse = response.tx.chargeResponseCode;
           if (chargeResponse == "00" || chargeResponse == "0") {
-            window.location = "../public/paymentverification.php?txref="+txref+"&amt="+amount+"&cur="+currency+"&name="+cust_name+"&address="+cust_add; //Add your success page here
+            window.location = "/daveTicket/index?controller=transactions&txref="+txref+"&amt="+amount+"&cur="+currency+"&name="+cust_name+""; //Add your success page here
           } else {
             window.location = "../public/payverification_fail.php?txref="+txref;  //Add your failure page here
           }

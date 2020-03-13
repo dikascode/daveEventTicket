@@ -1,4 +1,4 @@
-
+<?php session_destroy(); ?>
 <div class="hero-wrap">
 	    <div class="home-slider owl-carousel">
 	      <div class="slider-item" style="background-image:url(assets/images/bg_1.jpg);">

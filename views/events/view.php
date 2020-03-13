@@ -1,3 +1,9 @@
+<?php 
+
+    if(count($viewmodel) > 0):
+    
+?>
+
 <div>
 
 <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/images/<?php echo $viewmodel[0]['big_image']; ?>');" data-stellar-background-ratio="0.5">
@@ -45,6 +51,7 @@
                 <div class="col-md-4 col-sm-4">&#8358; <?php echo number_format($item['price']); ?></div>
                 <div class="col-md-4 col-sm-3">
                     <div class="form-group">
+                    
                     <input class="form-control" type="number" name="number_<?php echo $item['ticket_id']; ?>" min="0" max="20" value="0" />
                     </div> 
                 </div>
@@ -71,3 +78,16 @@
 
   
 </div>
+
+<?php else: ?>
+
+<div>
+<div class="row">
+    <div class="col-md-12">
+    <h1>This Event doesn't have any Ticket for sale</h1>
+    <p>Please go back <a href="<?php echo ROOT_URL; ?>">HOME</a></p>
+    </div>
+</div>
+</div>
+
+<?php endif; ?>

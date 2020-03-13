@@ -46,7 +46,9 @@
 
         public function view() {
 
-          
+            if(!isset($_SESSION['ticket_page'] )){
+
+            
 
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
             $this->bind(':id', $_GET['id']);
@@ -66,23 +68,28 @@
 
                     foreach ($post as $value) {
                         $_SESSION['Tnumber_'.$i.''] =  $value;
+
                         $i++;
+                        
                     }
 
                 } else {
                     Messages::setMsg('You Have To Pick A Ticket To Proceed', 'error');
                 }
 
+            
+
                 //filter off non numerics 
                 $filtered_array = array_filter($_SESSION, 'is_numeric');
 
-                //Caluclate the price for each ticket bought
+                //Caluclate the price for each ticket bought and assign value to a session array
 
                 if(count($filtered_array) < count($post)) {
                 
                     foreach ($filtered_array as $value) {
-                        $_SESSION['price_'.$j.''] = $filtered_array['Tnumber_'.$j.''] * $rows[$j-1]['price'];
-                        $_SESSION['total_price'] += $_SESSION['price_'.$j.''];
+                        $_SESSION['ticket_data'][$j] = $value;
+                        $_SESSION['ticket_price'][$j] = $filtered_array['Tnumber_'.$j.''] * $rows[$j-1]['price'];
+                        $_SESSION['total_price'] += $_SESSION['ticket_price'][$j];
 
                         $j++;
                     }
@@ -100,14 +107,17 @@
 
             }
             
-            //session_destroy();
+            
             return $rows;
- 
+        } else {
+            header('Location: '.ROOT_PATH);
+        }
         
         }
 
 
         public function ticketSale() {
+            $_SESSION['ticket_page'] = "Arrived Here";
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
             $this->bind(':id', $_GET['id']);
             $rows = $this->resultSet();
