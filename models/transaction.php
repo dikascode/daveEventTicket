@@ -4,9 +4,11 @@
        
         public function Index () {
 
+            $id = $_SESSION['e_no_concern_u'];
+
 
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
-            $this->bind(':id', $_GET['id']);
+            $this->bind(':id', $id);
             $rows = $this->resultSet();
             
             
@@ -59,9 +61,9 @@
                 $orderDate = $resp['data']['created'];
         
         
-                echo "<pre>";
-                print_r($resp['data']);
-                echo "</pre>";
+                // echo "<pre>";
+                // print_r($resp['data']);
+                // echo "</pre>";
         
         
                 //sessions for customer
@@ -73,9 +75,6 @@
                 
         
                 if (($chargeResponsecode == "00" || $chargeResponsecode == "0") && ($chargeAmount == $amount)  && ($chargeCurrency == $currency) && isset($_SESSION['ticket_total_price'])) {
-        
-                    $total = 0;
-                    $item_quantity = 0;
         
         
                    // insert into orders table
@@ -103,25 +102,45 @@
 
 
                     $ticket_value = $_SESSION['ticket_data'];
-                    $id = $_GET['id'];
+                    
 
-                        foreach($ticket_value as $key => $value):
-                            
-                            if($value > 0) {
+                        foreach($ticket_value as $key => $value){
+                               
+                        if($value > 0) {
 
                         // insert into reports table
 
-                         $this->query("INSERT INTO reports (event_id, order_id, ticket_price, ticket_name, ticket_quantity)
-                         VALUES(:id, :last_id, :ticket_price, :ticket_name,  :ticket_quantity)");
+                         $this->query("INSERT INTO reports (event_id, order_id, ticket_price, ticket_name, ticket_quantity, cust_email, cust_number, cust_name, order_date, payment_status)
+                         VALUES(:id, :last_id, :ticket_price, :ticket_name, :ticket_quantity, :cust_email, :cust_number, :cust_name, :order_date, :payment_status)");
          
                         $this->bind(':id', $id);
                         $this->bind(':last_id', $last_id);
-                        $this->bind(':ticket_price', $_SESSION['ticket_price'][$key]);
+                        $this->bind(':ticket_price', $rows[$key-1]['price']);
                         $this->bind(':ticket_name', $rows[$key-1]['class']);
                         $this->bind(':ticket_quantity', $value);
-                            }
+                        $this->bind(':cust_email', $cust_email);
+                        $this->bind(':cust_number', $cust_number);
+                        $this->bind(':cust_name', $cust_name);
+                        $this->bind(':order_date', $orderDate);
+                        $this->bind(':payment_status', $paymentStatus);
 
-                        endforeach;
+                        $this->execute();
+
+                        echo $_SESSION['ticket_price'][$key];
+                        
+                        
+
+                        }
+
+                    }
+
+                    
+                    if($this->lastInsertId()) {
+                        //redirect
+                        // header('Location: '.ROOT_URL);
+
+                        echo "Hi, we made it here.";
+                    }
 
                     
                     

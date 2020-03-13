@@ -48,8 +48,6 @@
 
             if(!isset($_SESSION['ticket_page'] )){
 
-            
-
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
             $this->bind(':id', $_GET['id']);
             $rows = $this->resultSet();
@@ -95,6 +93,11 @@
                     }
                 }
 
+                echo "<pre>";
+                print_r($filtered_array);
+                print_r($_SESSION);
+                echo "</pre>";
+
                 if(isset($_SESSION['total_price']) && $_SESSION['total_price'] > 0 ) {
                     header('Location: '.ROOT_PATH."?controller=events&action=ticketSale&id=".$_GET['id']);
 
@@ -117,6 +120,7 @@
 
 
         public function ticketSale() {
+            $_SESSION['e_no_concern_u'] = $_GET['id'];
             $_SESSION['ticket_page'] = "Arrived Here";
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
             $this->bind(':id', $_GET['id']);
