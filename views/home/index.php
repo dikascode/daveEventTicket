@@ -51,8 +51,11 @@
         	<div class="container-fluid">
         		<div id="carousel-example" class="carousel slide" data-ride="carousel">
         			<div class="carousel-inner row w-100 mx-auto" role="listbox">
+					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+							<img src="assets/images/1.jpg" class="img-fluid mx-auto d-block" alt="img1">
+					</div>
 					<?php foreach($viewmodel as $item): ?>
-            			<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+            			<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
 							<img src="assets/images/<?php echo $item['small_image']; ?>" class="img-fluid mx-auto d-block" alt="<?php echo $item['small_image']; ?>"> <br />
 							<a class="btn btn-primary" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $item['id']; ?>">Buy Ticket</a>
 						</div>

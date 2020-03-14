@@ -1,3 +1,3 @@
-<?php print_r($_GET)?>
 
-Congratulations, you've purchased your ticket.
+
+<h1>Congratulations, you've purchased your ticket.</h1>

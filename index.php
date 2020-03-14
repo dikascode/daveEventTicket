@@ -6,7 +6,11 @@ ob_start();
     //include config
     require('config.php');
 
+//Import PHPMailer classes into the global namespace
+
+
     require('classes/Messages.php');
+    require('classes/Mail.php');
     require('classes/Bootstrap.php');
     require('classes/Controller.php');
     require('classes/Model.php');

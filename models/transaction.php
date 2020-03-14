@@ -107,26 +107,68 @@
                         foreach($ticket_value as $key => $value){
                                
                         if($value > 0) {
+                        
+                        $ticket_number = mt_rand(0, 10000000000);
 
                         // insert into reports table
 
-                         $this->query("INSERT INTO reports (event_id, order_id, ticket_price, ticket_name, ticket_quantity, cust_email, cust_number, cust_name, order_date, payment_status)
-                         VALUES(:id, :last_id, :ticket_price, :ticket_name, :ticket_quantity, :cust_email, :cust_number, :cust_name, :order_date, :payment_status)");
+                         $this->query("INSERT INTO reports (event_id, order_id, ticket_id, ticket_price, ticket_name, ticket_quantity, ticket_number, cust_email, cust_number, cust_name, order_date, payment_status, event_time, event_location, event_date)
+                         VALUES(:id, :last_id, :ticket_id, :ticket_price, :ticket_name, :ticket_quantity, :ticket_number, :cust_email, :cust_number, :cust_name, :order_date, :payment_status, :event_time, :event_location, :event_date)");
          
                         $this->bind(':id', $id);
+                        $this->bind(':ticket_id', $rows[$key-1]['ticket_id']);
                         $this->bind(':last_id', $last_id);
                         $this->bind(':ticket_price', $rows[$key-1]['price']);
                         $this->bind(':ticket_name', $rows[$key-1]['class']);
                         $this->bind(':ticket_quantity', $value);
+                        $this->bind(':ticket_number', $ticket_number);
                         $this->bind(':cust_email', $cust_email);
                         $this->bind(':cust_number', $cust_number);
                         $this->bind(':cust_name', $cust_name);
                         $this->bind(':order_date', $orderDate);
                         $this->bind(':payment_status', $paymentStatus);
+                        $this->bind(':event_time', date('h:i A', strtotime($rows[$key-1]['date'])));
+                        $this->bind(':event_location', $rows[$key-1]['location']);
+                        $this->bind(':event_date', date('d F, Y', strtotime($rows[$key-1]['date'])));
+                
 
                         $this->execute();
 
-                        echo $_SESSION['ticket_price'][$key];
+                        /******************************SEND EMAIL TO CLEINT***************************** */
+
+                        for($i=1; $i<=$value; $i++) {
+
+                       
+                        $subject = "{$cust_email}, Here is your {$rows[$key-1]['name']} Ticket Details";
+                        $time = date('h:i A', strtotime($rows[$key-1]['date']));
+                        $date = date('d F, Y', strtotime($rows[$key-1]['date']));
+                        $price = '&#8358; '. number_format($rows[$key-1]['price']);
+                        $htmlBody = "
+                                    <div style='position; relative; width:600px; height:600px; padding:2%; border: 5px #00043C solid;'>
+                                        <div style='width:45%; float:left;'>
+                                            <p style='position:absolute; margin:auto;'>Holla, this space is for QR Code</p>
+                                        </div>
+
+                                        <div style='width:45%; float:left; background-color:black; color:white; position:absolute; margin:auto; padding:2%;'>
+                                        <h3 align=center>{$rows[$key-1]['name']} Ticket Details</h3>
+                                        <p align=center><span style='font-weight:bold;'>Ticket Class: {$rows[$key-1]['class']}</span></p>
+                                        <p align=center>Ticket Number: {$ticket_number} </p>
+                                        <p align=center>Ticket Price: {$price} </p>
+                                        <p align=center>Ticket Holder: {$cust_name} </p>
+                                        <p align=center>Holder Number: {$cust_number} </p>
+                                        
+                                        <p align=center style='font-weight:bold;'>Event Details:</p>
+                                        <p align=center>Location: {$rows[$key-1]['location']}</p>
+                                        <p align=center>Event Date: {$date}</p>
+                                        <p align=center>Event Time: {$time}</p>
+
+                                        <p align=center>Contact us for questions and concerns on: 081350*****</p>
+                                        </div>
+                                    </div>";
+            
+                        Mails::sendEmail($cust_email, $subject, $htmlBody);
+
+                        }
                         
                         
 
@@ -139,7 +181,7 @@
                         //redirect
                         // header('Location: '.ROOT_URL);
 
-                        echo "Hi, we made it here.";
+                        // echo "Hi, we made it here.";
                     }
 
                     
@@ -159,9 +201,10 @@
     }
     
     }
-
-    return;
     session_destroy();
+    unset($_GET);
+    return;
+    
     }
 }
 

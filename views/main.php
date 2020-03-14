@@ -112,8 +112,8 @@
 											<div class="col-md-4 mb-md-0 mb-4">
 												<h2 class="footer-heading">Services</h2>
 												<ul class="list-unstyled">
-												<li><a href="#" class="py-1 d-block">e-Ticket Sale</a></li>
-												<li><a href="#" class="py-1 d-block">Events Management</a></li>
+												<li class="py-1 d-block">e-Ticket Sale</li>
+												<li class="py-1 d-block">Events Management</li>
 												
 												</ul>
 											</div>

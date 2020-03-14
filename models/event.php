@@ -46,6 +46,9 @@
 
         public function view() {
 
+
+            // echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n";
+
             if(!isset($_SESSION['ticket_page'] )){
 
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
@@ -93,10 +96,10 @@
                     }
                 }
 
-                echo "<pre>";
-                print_r($filtered_array);
-                print_r($_SESSION);
-                echo "</pre>";
+                // echo "<pre>";
+                // print_r($filtered_array);
+                // print_r($_SESSION);
+                // echo "</pre>";
 
                 if(isset($_SESSION['total_price']) && $_SESSION['total_price'] > 0 ) {
                     header('Location: '.ROOT_PATH."?controller=events&action=ticketSale&id=".$_GET['id']);

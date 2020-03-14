@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span><?php echo $viewmodel[0]['name']; ?> <i class="ion-ios-arrow-forward"></i></span></p>
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="<?php echo ROOT_PATH; ?>">Home <i class="ion-ios-arrow-forward"></i></a></span> <span><?php echo $viewmodel[0]['name']; ?> <i class="ion-ios-arrow-forward"></i></span></p>
             <h1 class="mb-0 bread"><?php echo $viewmodel[0]['name']; ?></h1>
           </div>
         </div>
@@ -54,7 +54,7 @@
             ?>
             <div class="row priceCat">
                 <div class="col-md-6 col-sm-6"><?php echo $value. ' x ' .  $viewmodel[$key - 1]['class']; ?></div>
-                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($value*$_SESSION['ticket_price'][$key]); ?></div>
+                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($_SESSION['ticket_price'][$key]); ?></div>
                 
             </div> <hr />
             <?php 
