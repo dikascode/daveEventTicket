@@ -1,5 +1,6 @@
 <?php
 
+
     class EventModel extends Model{
         public function Index() {
             $this->query('SELECT * FROM events ORDER BY create_date DESC');
@@ -46,8 +47,12 @@
 
         public function view() {
 
+            /**************************TEST****************** */
 
-            // echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n";
+            
+            /**************************TEST*********************** */
+
+
 
             if(!isset($_SESSION['ticket_page'] )){
 
@@ -123,6 +128,10 @@
 
 
         public function ticketSale() {
+
+            if($_SESSION['total_price']) {
+
+            
             $_SESSION['e_no_concern_u'] = $_GET['id'];
             $_SESSION['ticket_page'] = "Arrived Here";
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
@@ -132,6 +141,10 @@
                 // print_r($_SESSION);
                 // echo "</pre>";
             return $rows;
+
+            } else {
+                header('Location: '.ROOT_PATH);
+            }
         }
     }
 

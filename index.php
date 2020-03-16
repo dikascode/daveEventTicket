@@ -6,9 +6,12 @@ ob_start();
     //include config
     require('config.php');
 
+   
+    
+
 //Import PHPMailer classes into the global namespace
 
-
+    require("classes/meRaviQr/qrlib.php");
     require('classes/Messages.php');
     require('classes/Mail.php');
     require('classes/Bootstrap.php');

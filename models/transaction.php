@@ -1,5 +1,6 @@
 <?php
 
+
     class TransactionModel extends Model{
        
         public function Index () {
@@ -107,8 +108,8 @@
                         foreach($ticket_value as $key => $value){
                                
                         if($value > 0) {
-                        
-                        $ticket_number = mt_rand(0, 10000000000);
+                        //Generate random 10 unique digits
+                        $ticket_number = rand(0, 10000000000);
 
                         // insert into reports table
 
@@ -137,36 +138,59 @@
                         /******************************SEND EMAIL TO CLEINT***************************** */
 
                         for($i=1; $i<=$value; $i++) {
+                        
+                        
 
                        
-                        $subject = "{$cust_email}, Here is your {$rows[$key-1]['name']} Ticket Details";
+                        $subject = "{$cust_name}, Here is your {$rows[$key-1]['name']} Ticket Details";
                         $time = date('h:i A', strtotime($rows[$key-1]['date']));
                         $date = date('d F, Y', strtotime($rows[$key-1]['date']));
                         $price = '&#8358; '. number_format($rows[$key-1]['price']);
+
+
+                        /*********************************QR Code Testing ********************************************* */
+                        $price_for_display = number_format($rows[$key-1]['price']);
+                        
+                        $qr_text = "Name: ". $cust_name . ". Number: ". $cust_number. ". Event: " . $rows[$key-1]['name']. ". Ticket Class: " . $rows[$key-1]['class'] . ". Ticket Number: " . $ticket_number . ". Ticket Price:N " . $price_for_display . "";
+
+                        $qrImgName = "YouConnect".rand();
+                        //$final ="This is Dika TESTing qr testing";
+                        //$dev = " ...Develop By Ravi Khadka";
+                        $qrs = QRcode::png($qr_text,"classes/userQr/$qrImgName.png","H","3","3");
+                        $qrimage = $qrImgName.".png"; 
+                        //$workDir = $_SERVER['HTTP_HOST'];
+                        // $qrlink = $workDir."/qrcode".$qrImgName.".png";
+
+                        $path = "classes/userQr/{$qrimage}";
+            
+                        // echo "<img width='300px' src='{$path}' alt=''>";
+
+
                         $htmlBody = "
-                                    <div style='position; relative; width:600px; height:600px; padding:2%; border: 5px #00043C solid;'>
-                                        <div style='width:45%; float:left;'>
-                                            <p style='position:absolute; margin:auto;'>Holla, this space is for QR Code</p>
+                                    <div style='width:650px; height:600px; padding:2%;'>
+                                        <div style='width:45%; box-sizing: border-box; height:100%; float:left; border-left: 5px red solid; border-bottom: 5px red solid; border-top:5px red solid; '>
+                                        <img style='margin-top: 15%; margin-left: 7%' width='250px' src='cid:Ticket_image' alt='{$rows[$key-1]['class']} QRCode'>
                                         </div>
 
-                                        <div style='width:45%; float:left; background-color:black; color:white; position:absolute; margin:auto; padding:2%;'>
-                                        <h3 align=center>{$rows[$key-1]['name']} Ticket Details</h3>
-                                        <p align=center><span style='font-weight:bold;'>Ticket Class: {$rows[$key-1]['class']}</span></p>
-                                        <p align=center>Ticket Number: {$ticket_number} </p>
-                                        <p align=center>Ticket Price: {$price} </p>
-                                        <p align=center>Ticket Holder: {$cust_name} </p>
-                                        <p align=center>Holder Number: {$cust_number} </p>
+                                        <div style='width:45%; height:100%; float:left; box-sizing: border-box; background-color:black; padding:1%;'>
+                                        <h3 align=center style='color:white;'>{$rows[$key-1]['name']} Ticket Details</h3>
+                                        <p align=left style='color:white;'<span style='font-weight:bold;'>Ticket Class: {$rows[$key-1]['class']}</span></p> <hr />
+                                        <p align=left style='color:white;'><span style='font-weight:bold;'>Ticket Number:</span> {$ticket_number} </p> <hr />
+                                        <p align=left style='color:white;'><span style='font-weight:bold;'>Ticket Price:</span> {$price} </p> <hr />
+                                        <p align=left style='color:white;'><span style='font-weight:bold;'>Ticket Holder:</span> {$cust_name} </p> <hr />
+                                        <p align=left style='color:white;'><span style='font-weight:bold;'>Holder Number:</span> {$cust_number} </p> <hr />
                                         
-                                        <p align=center style='font-weight:bold;'>Event Details:</p>
-                                        <p align=center>Location: {$rows[$key-1]['location']}</p>
-                                        <p align=center>Event Date: {$date}</p>
-                                        <p align=center>Event Time: {$time}</p>
+                                        <h3 align=center style='color:white;'>Event Details</h3>
+                                        <p align=left style='color:white;'><span style='font-weight:bold;'>Location:</span> {$rows[$key-1]['location']}</p> <hr />
+                                        <p align=left style='color:white;'><span style='font-weight:bold;'>Event Date:</span> {$date}</p> <hr />
+                                        <p align=left style='color:white;'><span style='font-weight:bold;'>Event Time:</span> {$time}</p> <hr />
 
-                                        <p align=center>Contact us for questions and concerns on: 081350*****</p>
+                                        <p align=center style='color:white;'><span style='color:red'>Please come along with your ticket to the event.</span> Contact us for questions and concerns on: 081350*****</p>
                                         </div>
                                     </div>";
-            
-                        Mails::sendEmail($cust_email, $subject, $htmlBody);
+                        
+
+                        Mails::sendEmail($cust_email, $subject, $htmlBody, $path);
 
                         }
                         
@@ -175,17 +199,6 @@
                         }
 
                     }
-
-                    
-                    if($this->lastInsertId()) {
-                        //redirect
-                        // header('Location: '.ROOT_URL);
-
-                        // echo "Hi, we made it here.";
-                    }
-
-                    
-                    
                    
                 }
 

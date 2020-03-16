@@ -61,7 +61,7 @@
                 endforeach; ?>
             <div class="row">
                 <div class="form-group col-md-3 col-sm-3">
-                <input style="background-color:#FDBE34; color:#00043C; font-weight:bold;" class="btn" type="submit" name="submit" value="SUBMIT" />
+                <input style="background-color:#FDBE34; color:  ; font-weight:bold;" class="btn" type="submit" name="submit" value="SUBMIT" />
                 </div>
 
             </div>
