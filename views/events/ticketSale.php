@@ -13,8 +13,10 @@
 </section>
 <div class="row">
     <div class="col-md-12">
-    <h1>Ticket Details</h1>
-    <h4>Ticket information will be sent to you</h4>
+    <h1 style="color:#FDBE34;">Ticket Details</h1>
+    <hr />
+    <h4>Ticket information will be sent to your mail.</h4>
+    <p style="color:red;">*Please Fill All Fields To Proceed</p>
     </div>
 </div>
 <div class="row">
@@ -33,6 +35,7 @@
         <div class="row">
             <div class="form-group col-md-6 col-sm-6">
                 <input class="form-control" id="number" type="text" placeholder="Please Enter Your Phone Number" name="number" />
+                <p style="color:red;" id="error"></p>
             </div>
         </div>
     </div>

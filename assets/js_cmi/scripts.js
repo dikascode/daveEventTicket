@@ -15,7 +15,39 @@ function scroll_to(clicked_link, nav_height) {
 jQuery(document).ready(function() {
 
 	
-	
+
+	//Function to disable Flutter Wave Pay button if all fields are not inputted
+
+	$("#submit").prop('disabled', true);
+
+		$(".form-control").keyup(function(){
+
+			
+
+			if ($('#name').val().trim() != '' || $('#email').val().trim() != '' || $('#number').val().trim() != '' ) {
+				$("#submit").prop('disabled', false);
+			}
+			
+			if ($('#name').val().trim() == '' || $('#email').val().trim() == '' || $('#number').val().trim() == '' ) {
+				$("#submit").prop('disabled', true);
+				//alert("Please Fill All FIleds");
+			}
+			
+		});
+
+		$("#number").keyup(function () {
+			if($.isNumeric($('#number').val()) == false || $('#number').val().trim().length < 11) {
+				$("#submit").prop('disabled', true);
+				$('#error').html("Please Insert the correct number");
+			}else{
+				$('#error').empty();
+			}
+			
+		});
+
+		
+
+//Carousel Multiple scrip continued
 	/*
 	    Navigation
 	*/
