@@ -56,7 +56,7 @@
                 $chargeCurrency = $resp['data']['currency'];
                 $cust_email = $resp['data']['custemail'];
                 $cust_number = $resp['data']['custphone'];
-                $cust_name = $name;
+                $cust_name = filter_var($name, FILTER_SANITIZE_STRING);
                 $paymentType = $resp['data']['paymenttype'];
                 $custIP = $resp['data']['ip'];
                 $orderDate = $resp['data']['created'];

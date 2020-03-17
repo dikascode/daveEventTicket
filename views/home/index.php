@@ -8,7 +8,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 ?>
 <div class="row">
 	    <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image:url(assets/images/bg_1.jpg);">
+	      <div class="slider-item" style="background-image:url(assets/images/pic1.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -22,7 +22,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image:url(assets/images/bg_2.jpg);">
+	      <div class="slider-item" style="background-image:url(assets/images/pic2.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -36,7 +36,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	        </div>
 	      </div>
 
-	      <div class="slider-item" style="background-image:url(assets/images/bg_3.jpg);">
+	      <div class="slider-item" style="background-image:url(assets/images/admission-2974645_1920.jpg);">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
