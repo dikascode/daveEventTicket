@@ -3,11 +3,8 @@
 
     class EventModel extends Model{
         public function Index() {
-            $this->query('SELECT * FROM events ORDER BY create_date DESC');
+            $this->query('SELECT * FROM events ORDER BY id DESC');
             $rows = $this->resultSet();
-            // echo "<pre>";
-            // print_r($rows);
-            // echo "</pre>";
 
             return $rows;
         }

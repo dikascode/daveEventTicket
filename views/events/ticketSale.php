@@ -74,7 +74,7 @@
 
             <div class="row priceCat">
                 <div class="col-md-6 col-sm-6">Service Charge</div>
-                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($service_charge = $_SESSION['total_price'] * 0.010); ?></div> 
+                <div class="col-md-6 col-sm-6">&#8358; <?php echo number_format($service_charge = $_SESSION['total_price'] * 0.020); ?></div> 
             </div>
             <span style="font-size: 10px;">(Online Payment Convenience Fee)</span> <hr />
 
