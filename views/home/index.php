@@ -74,6 +74,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 					<?php }else { ?>
 						<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(000); ?></span> <br>
 					<?php } ?>
+					<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[0]['date'])); ?></span> <br>
 					<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[0]['id']; ?>">Buy Ticket</a>
 					</div>
 					</div>
@@ -95,6 +96,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 							<?php }else{ ?>
 							<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(0000); ?></span> <br>
 							<?php } ?>
+							<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span> <br>
 							<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
 						</div>
 						</div>
@@ -128,7 +130,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 <div class="row">
 <?php 
 
-for($i=0; $i<6; $i++ ){
+for($i=0; $i<8; $i++ ){
 
 	$tickets_query = "SELECT * FROM tickets LEFT JOIN events ON tickets.event_id = events.id WHERE tickets.event_id = {$viewmodel[$i]['id']}";
 	$result = mysqli_query($connection, $tickets_query);
@@ -145,6 +147,7 @@ for($i=0; $i<6; $i++ ){
 			<?php } else{ ?>
 			<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(0000); ?></span> <br>
 			<?php } ?>
+			<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span> <br>
 			<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
 		</div>
 	</div>

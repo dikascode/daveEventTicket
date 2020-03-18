@@ -7,9 +7,8 @@ ob_start();
     require('config.php');
 
    
-    
-
-//Import PHPMailer classes into the global namespace
+    // require("admin/index.php");
+    // require("admin/admin_functions.php");
 
     require("classes/meRaviQr/qrlib.php");
     require('classes/Messages.php');

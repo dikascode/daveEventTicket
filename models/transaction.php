@@ -113,8 +113,8 @@
 
                         // insert into reports table
 
-                         $this->query("INSERT INTO reports (event_id, order_id, ticket_id, ticket_price, ticket_name, ticket_quantity, ticket_number, cust_email, cust_number, cust_name, order_date, payment_status, event_time, event_location, event_date)
-                         VALUES(:id, :last_id, :ticket_id, :ticket_price, :ticket_name, :ticket_quantity, :ticket_number, :cust_email, :cust_number, :cust_name, :order_date, :payment_status, :event_time, :event_location, :event_date)");
+                         $this->query("INSERT INTO reports (event_id, order_id, ticket_id, ticket_price, ticket_name, ticket_quantity, ticket_number, cust_email, cust_number, cust_name, order_date, payment_status, event_name, event_time, event_location, event_date)
+                         VALUES(:id, :last_id, :ticket_id, :ticket_price, :ticket_name, :ticket_quantity, :ticket_number, :cust_email, :cust_number, :cust_name, :order_date, :payment_status, :event_name, :event_time, :event_location, :event_date)");
          
                         $this->bind(':id', $id);
                         $this->bind(':ticket_id', $rows[$key-1]['ticket_id']);
@@ -128,6 +128,7 @@
                         $this->bind(':cust_name', $cust_name);
                         $this->bind(':order_date', $orderDate);
                         $this->bind(':payment_status', $paymentStatus);
+                        $this->bind(':event_name', $rows[$key-1]['name']);
                         $this->bind(':event_time', date('h:i A', strtotime($rows[$key-1]['date'])));
                         $this->bind(':event_location', $rows[$key-1]['location']);
                         $this->bind(':event_date', date('d F, Y', strtotime($rows[$key-1]['date'])));

@@ -141,23 +141,24 @@
 					</div>
 					<div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
 						<h2 class="footer-heading">Request A Quote</h2>
-						<form action="#" class="contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-              	<button type="submit" class="form-control submit px-3">Send</button>
-              </div>
-            </form>
+						<form method="post" action="<?php $_SERVER['PHP_SELF'];  ?>" class="contact-form">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Your Name">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Your Email">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Subject">
+							</div>
+							<div class="form-group">
+								<textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+							</div>
+							<div class="form-group">
+							<input class="form-control submit px-3" name="submit" type="submit" value="Send" />
+							
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>

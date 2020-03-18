@@ -5,7 +5,13 @@
             $this->query('SELECT * FROM events ORDER BY id DESC');
             $rows = $this->resultSet();
 
+            // if(isset($_POST['submit']) && $_POST['submit']){
+            //     echo "Hi I got here";
+            // }
+
             return $rows;
+
+        
         }
     }
 
