@@ -93,7 +93,7 @@ function form_protect () {
 // Admin orders
 function display_orders () {
 
-    $query = query("SELECT * FROM orders");
+    $query = query("SELECT * FROM orders ORDER BY order_id desc");
     confirm($query);
 
 
@@ -169,7 +169,7 @@ function display_image ($picture) {
 
  function get_events_in_admin() {
 
-    $query = query("SELECT * FROM events");
+    $query = query("SELECT * FROM events ORDER BY id desc");
     confirm($query);
 
     while($row = fetch_array($query)) {
@@ -217,15 +217,15 @@ global $upload_directory;
 
             //validate crsf token
     if (hash_equals($crsf, $_POST['crsf'])) {
-        $event_title         = escape_string($_POST['event_name']);
-        $event_cat_id         = escape_string($_POST['event_category_id']);
-        $event_desc           = escape_string($_POST['event_desc']);
-        $event_venue           = escape_string($_POST['event_venue']);
-        $date_time           = escape_string($_POST['event_date']);
-        $big_image      = escape_string($_FILES['file']['name']);
-        $small_image    = escape_string($_FILES['file2']['name']);
-        $image_temp_location  = $_FILES['file']['tmp_name'];
-        $image_temp_location2  = $_FILES['file2']['tmp_name'];
+        $event_title            = htmlvalidation($_POST['event_name']);
+        $event_cat_id           = htmlvalidation($_POST['event_category_id']);
+        $event_desc             = nl2br(htmlvalidation($_POST['event_desc']));
+        $event_venue            = htmlvalidation($_POST['event_venue']);
+        $date_time              = htmlvalidation($_POST['event_date']);
+        $big_image              = htmlvalidation($_FILES['file']['name']);
+        $small_image            = htmlvalidation($_FILES['file2']['name']);
+        $image_temp_location    = $_FILES['file']['tmp_name'];
+        $image_temp_location2   = $_FILES['file2']['tmp_name'];
 
         if (empty($event_title) || empty($event_cat_id) || empty($event_desc) || empty($event_venue) || empty($date_time) || empty($big_image) || empty($small_image)) {
 
@@ -305,13 +305,13 @@ function update_event () {
             //validate crsf token
     if (hash_equals($crsf, $_POST['crsf'])) {
 
-        $event_title            = escape_string($_POST['event_title']);
-        $event_venue            = escape_string($_POST['event_venue']);
-        $event_date             = escape_string($_POST['event_date']);
-        $cat_id                 = escape_string($_POST['cat_id']);
-        $event_desc             = escape_string($_POST['event_desc']);
-        $big_image              = escape_string($_FILES['file']['name']);
-        $small_image            = escape_string($_FILES['file2']['name']);
+        $event_title            = htmlvalidation($_POST['event_title']);
+        $event_venue            = htmlvalidation($_POST['event_venue']);
+        $event_date             = htmlvalidation($_POST['event_date']);
+        $cat_id                 = htmlvalidation($_POST['cat_id']);
+        $event_desc             = nl2br(htmlvalidation($_POST['event_desc']));
+        $big_image              = htmlvalidation($_FILES['file']['name']);
+        $small_image            = htmlvalidation($_FILES['file2']['name']);
         $image_temp_location    = $_FILES['file']['tmp_name'];
         $image_temp_location2   = $_FILES['file2']['tmp_name'];
 
@@ -643,7 +643,7 @@ function login_user(){
 
     function get_reports() {
 
-        $query = query("SELECT * FROM reports");
+        $query = query("SELECT * FROM reports ORDER BY report_id desc");
         confirm($query);
     
         while($row = fetch_array($query)) {

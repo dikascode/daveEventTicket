@@ -1,9 +1,9 @@
 <?php
     //Define DB param
 
-    define("DB_HOST", "localhost");
-    define("DB_USER", "root");
-    define("DB_PASS", "");
+    define("DB_HOST", "us-cdbr-iron-east-04.cleardb.net");
+    define("DB_USER", "b5a1bd816a4613");
+    define("DB_PASS", "a89a9c5f");
     define("DB_NAME", "dave_ticket");
 
     //define URl

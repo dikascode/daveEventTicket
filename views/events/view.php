@@ -25,23 +25,26 @@
 <div class="row">
     
     <div class="col-lg-7 col-sm-push-5">
-        <div class="event_desc">
-        <p><?php echo $viewmodel[0]['description']; ?></p>
+        <div style="background-color: #00043C; padding:2%; border-radius:1%" class="event_desc">
+        <p style="color: #FDBE34;">
+        <?php echo $viewmodel[0]['description']; ?>
+        </p>
         </div>
+        <hr>
 
-        <div class="date_time">
-        <p>Date</p>
-        <h4><?php echo date('d F, Y', strtotime($viewmodel[0]['date'])); ?></h4>
+        <div style="color: #00043C;" class="date_time">
+        <h4>Date:</h4>
+        <h5 style="color: #FDBE34;">>>> <?php echo date('d F, Y', strtotime($viewmodel[0]['date'])); ?></h5>
 
-        <p>Time</p>
-        <h4><?php echo date('h:i A', strtotime($viewmodel[0]['date'])); ?></h4>
+        <h4>Time:</h4>
+        <h5 style="color: #FDBE34;">>>> <?php echo date('h:i A', strtotime($viewmodel[0]['date'])); ?></h5>
 
-        <p>Venue</p>
-        <h4><?php echo $viewmodel[0]['location']; ?></h4>
+        <h4>Venue:</h4>
+        <h5 style="color: #FDBE34;">>>> <?php echo $viewmodel[0]['location']; ?></h5>
         </div>
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-lg-5" style="border-left: #00043C 2px solid">
         <div class="ticketClass">
             <h4>Pricing</h4>
             <form method="post" action="<?php $_SERVER['PHP_SELF'];  ?>">

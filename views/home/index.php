@@ -70,7 +70,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 					<span style="margin-left: 5%; font-weight: bold; color:#FDBE34;"><?php echo substr($viewmodel[0]['name'], 0, 25); ?></span> <br>
 					<span style="margin-left: 5%; color:white;"><i class="fa fa-map-marker"></i> <?php echo substr($viewmodel[0]['location'], 0, 30); ?></span> <br>
 					<?php $rows = mysqli_fetch_array($result); if($rows['event_id'] == $viewmodel[0]['id']) { ?>
-					<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format($row['price']); ?></span> <br>
+					<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format($rows['price']); ?></span> <br>
 					<?php }else { ?>
 						<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(000); ?></span> <br>
 					<?php } ?>

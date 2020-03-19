@@ -23,7 +23,7 @@
 
             if(!isset($_SESSION['ticket_page'] )){
 
-            $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
+            $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id ORDER BY id desc');
             $this->bind(':id', $_GET['id']);
             $rows = $this->resultSet();
 
