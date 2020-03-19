@@ -9,7 +9,7 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
     class Mails {
-        public static function sendEmail($cust_email, $subject, $mailContent, $path) {
+        public static function sendEmail($cust_email, $subject, $mailContent, $path = "") {
             $mail = new PHPMailer();
             $mail->isSendmail(); // disable SMTP for local host testing
             // $mail->isSMTP(); // Enable SMTP for gmail
@@ -32,8 +32,8 @@ require 'PHPMailer-master/src/SMTP.php';
             if($mail->send()){
                 // echo 'Message has been sent. Is a goal!';
             }else{
-                echo 'Message could not be sent.';
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
+                // echo 'Message could not be sent.';
+                // echo 'Mailer Error: ' . $mail->ErrorInfo;
             }
         }
 

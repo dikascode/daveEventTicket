@@ -16,14 +16,14 @@
 					<div class="col-md-12">
 						<div class="wrapper">
 							<div class="row no-gutters mb-5">
-								<div class="col-md-7">
+								<div class="col-md-12">
 									<div class="contact-wrap w-100 p-md-5 p-4">
 										<h3 class="mb-4">Contact Us</h3>
 										<div id="form-message-warning" class="mb-4"></div> 
 					      		<div id="form-message-success" class="mb-4">
-					            Your message was sent, thank you!
+					            Hello friend, How can we help you?
 					      		</div>
-										<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<form method="post" id="contactForm" name="contactForm" class="contactForm" action="<?php $_SERVER['PHP_SELF']; ?>">
 											<div class="row">
 												<div class="col-md-6">
 													<div class="form-group">
@@ -51,7 +51,7 @@
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<input type="submit" value="Send Message" class="btn btn-primary">
+														<input type="submit" name="submit" value="Send Message" class="btn btn-primary">
 														<div class="submitting"></div>
 													</div>
 												</div>
@@ -71,7 +71,7 @@
 				        			<span class="fa fa-map-marker"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+					            <p><span>Address:</span> Tunga, Minna, Niger State</p>
 					          </div>
 				          </div>
 								</div>
@@ -81,7 +81,7 @@
 				        			<span class="fa fa-phone"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+					            <p><span>Phone:</span> <a href="tel://1234567920">+234 7089355064</a></p>
 					          </div>
 				          </div>
 								</div>
@@ -91,7 +91,7 @@
 				        			<span class="fa fa-paper-plane"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">lexypoet@gmail.com</a></p>
 					          </div>
 				          </div>
 								</div>

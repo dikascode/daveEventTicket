@@ -99,7 +99,7 @@
 						<div class="row">
 							<div class="col-md-4 mb-md-0 mb-4">
 								<h2 class="footer-heading">About us</h2>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+								<p>We are an innovative team that's helping businesses execute successful events using tech.</p>
 								<ul class="ftco-footer-social p-0">
 		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
 		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
@@ -139,27 +139,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
-						<h2 class="footer-heading">Request A Quote</h2>
-						<form method="post" action="<?php $_SERVER['PHP_SELF'];  ?>" class="contact-form">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Your Name">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Your Email">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Subject">
-							</div>
-							<div class="form-group">
-								<textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
-							</div>
-							<div class="form-group">
-							<input class="form-control submit px-3" name="submit" type="submit" value="Send" />
-							
-							</div>
-						</form>
-					</div>
+					
 				</div>
 			</div>
 		</footer>
@@ -181,7 +161,7 @@
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <script src="assets/js/google-map.js"></script>
   <script src="assets/js/main.js"></script>
 

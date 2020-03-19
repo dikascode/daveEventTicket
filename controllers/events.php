@@ -7,16 +7,6 @@ class Events extends Controller {
     }
 
 
-    // protected function add() {
-    //     if(!isset($_SESSION['is_logged_in'])) {
-    //         header('Location: '.ROOT_URL.'?controller=shares');
-    //     } else{
-    //         $viewmodel = new ShareModel();
-    //         $this->returnView($viewmodel->add(), true);
-    //     }
-       
-    // }
-
 
     protected function view() {
         $viewmodel = new EventModel();

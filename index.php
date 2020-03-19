@@ -19,14 +19,12 @@ ob_start();
 
     require('controllers/home.php');
     require('controllers/events.php');
-    require('controllers/users.php');
     require('controllers/transactions.php');
     require('controllers/about.php');
     require('controllers/team.php');
     require('controllers/contact.php');
 
     require('models/home.php');
-    require('models/user.php');
     require('models/event.php');
     require('models/transaction.php');
     require('models/about.php');
