@@ -8,7 +8,7 @@
 
     //define URl
     define("ROOT_PATH", "/daveTicket/index");
-    define("ROOT_URL", "http://localhost/daveTicket/index");
+    define("ROOT_URL", "https://youconnect.herokuapp.com/index");
 
     defined ("DS") ? null : define ("DS", DIRECTORY_SEPARATOR);
     defined ("UPLOAD_DIR") ? null : define ("UPLOAD_DIR", __DIR__ . DS . "uploads");
