@@ -1,6 +1,7 @@
 <?php
 
-    require_once("../../config.php");
+include("../../config.php");
+include("../admin_functions.php");
 
 
     if(isset($_GET['id'])) {
@@ -9,12 +10,12 @@
         confirm($query);
         
         set_message("User Deleted");
-        redirect("../../../public/admin/index.php?users");
+        redirect("index.php?users");
 
 
     }else {
         set_message("No User Deleted");
-        redirect("../../../public/admin/index.php?users");
+        redirect("index.php?users");
 
     }
 

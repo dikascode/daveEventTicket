@@ -22,6 +22,7 @@
            <th>Title</th>
            <th>Image</th>
            <th>Category</th>
+           <th>Add Ticket Class</th>
            <th></th>
       </tr>
     </thead>

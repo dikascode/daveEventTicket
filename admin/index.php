@@ -3,7 +3,13 @@
 include_once("templates/header.php");
 require_once("admin_functions.php");
 
+?>
 
+<?php 
+
+if (!isset($_SESSION['username'])) {
+    redirect("http://localhost/daveTicket/admin/login.php");
+} 
 
 ?>
 
@@ -29,11 +35,16 @@ require_once("admin_functions.php");
 
 
                 if(isset($_GET['categories'])) {
-                    include("templates//categories.php");
+                    include("templates/categories.php");
                 }
 
                 if(isset($_GET['edit_event'])) {
                     include("templates/edit_event.php");
+                }
+
+
+                if(isset($_GET['ticket_class'])) {
+                    include("templates/ticket_class.php");
                 }
 
 
@@ -60,6 +71,26 @@ require_once("admin_functions.php");
 
                 if(isset($_GET['delete_order_id'])) {
                     include("templates/delete_order.php");
+                }
+
+                if(isset($_GET['delete_ticket_class'])) {
+                    include("templates/delete_ticket_class.php");
+                }
+
+                if(isset($_GET['delete_category'])) {
+                    include("templates/delete_category.php");
+                }
+
+                if(isset($_GET['delete_event'])) {
+                    include("templates/delete_event.php");
+                }
+
+                if(isset($_GET['delete_user'])) {
+                    include("templates/delete_user.php");
+                }
+
+                if(isset($_GET['delete_report'])) {
+                    include("templates/delete_report.php");
                 }
 
              ?>

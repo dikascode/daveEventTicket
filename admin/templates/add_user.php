@@ -4,12 +4,6 @@
       <small>Page</small>
   </h1>
 
-<div class="col-md-6 user_image_box">
-    
-<span id="user_admin" class='fa fa-user fa-4x'></span>
-
-</div>
-
 
 <form action="" method="post" enctype="multipart/form-data">
 
@@ -46,7 +40,6 @@
 
       <div class="form-group">
 
-      <!-- <a id="user-id" class="btn btn-danger" href="">Delete</a> -->
 
       <input type="submit" name="add_user" class="btn btn-primary pull-right" value="Add User" >
          

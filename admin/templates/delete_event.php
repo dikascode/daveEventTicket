@@ -1,21 +1,23 @@
 <?php
 
-    require_once("../../config.php");
+include("../../config.php");
+include("../admin_functions.php");
+
 
 
     if(isset($_GET['id'])) {
 
-        $query = query("DELETE FROM products WHERE product_id =" . escape_string($_GET['id']) ."");
+        $query = query("DELETE FROM events WHERE id =" . escape_string($_GET['id']) ."");
         confirm($query);
 
 
-        set_message("Product Deleted");
-        redirect("../../../public/admin/index.php?products");
+        set_message("Event Deleted");
+        redirect("index.php?events");
 
 
     }else {
         set_message("No Product Deleted");
-        redirect("../../../public/admin/index.php?products");
+        redirect("index.php?events");
 
     }
 

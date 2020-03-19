@@ -186,8 +186,9 @@ function display_image ($picture) {
     <td>{$row['name']}</td>
     <td><a href="index.php?edit_event&id={$row['id']}"><img width="100px" src="{$product_image}" alt="Image {$row['name']}"></a></td>
     <td>$category_title</td>
-    <td><a class="btn btn-danger" href="templates/delete_product.php?id={$row['id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
-   
+    <td><a href="index.php?ticket_class&id={$row['id']}">Add Ticket Class</a></td>
+    <td><a class="btn btn-danger" href="index.php?delete_event&id={$row['id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+    
 
 
 </tr>
@@ -226,6 +227,13 @@ global $upload_directory;
         $image_temp_location  = $_FILES['file']['tmp_name'];
         $image_temp_location2  = $_FILES['file2']['tmp_name'];
 
+        if (empty($event_title) || empty($event_cat_id) || empty($event_desc) || empty($event_venue) || empty($date_time) || empty($big_image) || empty($small_image)) {
+
+            echo "<h3 class='bg-danger'>All Fields are Required</h3>";
+            //set_message("Fields are required");
+
+        } else {
+
 
         // UPLOAD_FOLDER . DS . $event_image
 
@@ -241,6 +249,8 @@ global $upload_directory;
         confirm($query);
         set_message("New event with ID {$last_id} was Successfully Added");
         redirect("index.php?events");
+
+        }
     }else {
         echo "<p class='bg-danger'>CRSF Token Failed</p>";
     }
@@ -285,7 +295,8 @@ function show_event_category_title ($product_category_id) {
 
 // Edit function for products in admin page
 
-function update_product () {
+function update_event () {
+    global $upload_directory;
 
     $crsf = form_protect();
 
@@ -294,46 +305,49 @@ function update_product () {
             //validate crsf token
     if (hash_equals($crsf, $_POST['crsf'])) {
 
-        $product_title          = escape_string($_POST['product_title']);
-        $product_cat_id         = escape_string($_POST['product_category_id']);
-        $product_price          = escape_string($_POST['product_price']);
-        $product_quantity       = escape_string($_POST['product_quantity']);
-        $product_desc           = escape_string($_POST['product_desc']);
-        $short_desc             = escape_string($_POST['short_desc']);
-        $product_image          = escape_string($_FILES['file']['name']);
+        $event_title            = escape_string($_POST['event_title']);
+        $event_venue            = escape_string($_POST['event_venue']);
+        $event_date             = escape_string($_POST['event_date']);
+        $cat_id                 = escape_string($_POST['cat_id']);
+        $event_desc             = escape_string($_POST['event_desc']);
+        $big_image              = escape_string($_FILES['file']['name']);
+        $small_image            = escape_string($_FILES['file2']['name']);
         $image_temp_location    = $_FILES['file']['tmp_name'];
+        $image_temp_location2   = $_FILES['file2']['tmp_name'];
 
-        if (empty($product_image)) {
-            $get_pic = query("SELECT product_image FROM products WHERE product_id =" . escape_string($_GET['id']) ."");
+
+        if(empty($big_image) || empty($small_image)) {
+            $get_pic = query("SELECT big_image, small_image FROM events WHERE id =" . escape_string($_GET['id']) ."");
             confirm($get_pic);
 
             while($pic = fetch_array($get_pic)) {
 
-                $product_image = $pic['product_image'];
+                $big_image      = $pic['big_image'];
+                $small_image    = $pic['small_image'];
+
             }
-
-
         }
 
 
-        move_uploaded_file($_FILES['file']['tmp_name'], UPLOAD_DIR . DS . $product_image);
+        move_uploaded_file($_FILES['file']['tmp_name'], $upload_directory . DS . $big_image);
+        move_uploaded_file($_FILES['file2']['tmp_name'], $upload_directory . DS . $small_image);
     
         // Update product query
 
-        $query  = "UPDATE products SET ";
-        $query .= "product_title                = '{$product_title}'    , ";
-        $query .= "product_category_id          = '{$product_cat_id }'  , ";
-        $query .= "product_price                = '{$product_price}'    , ";
-        $query .= "product_quantity             = '{$product_quantity}' , ";
-        $query .= "product_desc                 = '{$product_desc}'     , ";
-        $query .= "short_desc                   = '{$short_desc}'       , ";
-        $query .= "product_image                = '{$product_image}'     ";
-        $query .= "WHERE product_id =" . escape_string($_GET['id']);
+        $query  = "UPDATE events SET ";
+        $query .= "name                = '{$event_title}'    , ";
+        $query .= "location            = '{$event_venue}'    , ";
+        $query .= "date                = '{$event_date}'    , ";
+        $query .= "cat_id              = '{$cat_id }'  , ";
+        $query .= "description         = '{$event_desc}'     , ";
+        $query .= "big_image           = '{$big_image}'    , ";
+        $query .= "small_image         = '{$small_image}'     ";
+        $query .= "WHERE id =" . escape_string($_GET['id']);
         
         $send_update_query = query($query);
         confirm($send_update_query);
-        set_message("Product Updated Successfully");
-        redirect("index.php?products");
+        set_message("Event Updated Successfully");
+        redirect("index.php?events");
 
     }else {
         echo "<p class='bg-danger'>CRSF Token Failed</p>";
@@ -366,7 +380,7 @@ $category = <<<DELIMETER
 <tr>
     <td>{$row['cat_id']}</td>
     <td>{$row['cat_title']}</td>
-    <td><a class="btn btn-danger" href="../../resources/templates/back/delete_category.php?id={$row['cat_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+    <td><a class="btn btn-danger" href="index.php?delete_category&id={$row['cat_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
 </tr>
 
 DELIMETER;
@@ -418,6 +432,94 @@ echo $category;
 
 
 
+    // ticket class in admin
+
+
+    function show_ticket_class_title ($ticket_id) {
+
+        $ticket_query = query("SELECT * FROM tickets WHERE ticket_id = {$ticket_id}");
+        confirm($ticket_query);
+    
+        while($ticket_row = fetch_array($ticket_query)) {
+            return $ticket_row['class'];
+        }
+    }
+
+    // Show ticket class function
+
+function show_ticket_class_in_admin () {
+
+$query = query("SELECT * FROM tickets WHERE event_id = {$_GET['id']}");
+    confirm($query);
+
+    while ($row = fetch_array($query)) {
+
+        $id     = $row['ticket_id'];
+        $title  = $row['class'];
+        $price  = $row['price'];
+
+$category = <<<DELIMETER
+
+<tr>
+    <td>{$id}</td>
+    <td>{$title}</td>
+    <td>{$price}</td>
+    <td><a class="btn btn-danger" href="index.php?delete_ticket_class&t_id={$row['ticket_id']}&id={$_GET['id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+</tr>
+
+DELIMETER;
+
+echo $category;
+
+    }
+
+}
+
+
+
+    // Create categories in admin
+
+    function add_ticket_class () {
+
+        if (isset($_POST['add_class'])) {
+
+            $crsf = form_protect();
+
+                //validate crsf token
+            if (hash_equals($crsf, $_POST['crsf'])) {
+
+                $ticket_name = escape_string($_POST['class']);
+                $ticket_price = escape_string($_POST['price']);
+
+                            if (empty($ticket_name) || empty($ticket_price)) {
+
+                                echo "<h3 class='bg-danger'>All Fields is Required</h3>";
+
+                            } else {
+
+                                $query = query("INSERT INTO tickets(class, price, event_id) VALUES('$ticket_name', '$ticket_price', '{$_GET['id']}')");
+
+                                confirm($query);
+                                $last_id = last_id();
+                                $ticket_title = show_ticket_class_title($last_id);
+                                set_message($ticket_title . " Class Created");
+                                redirect("index.php?ticket_class&id={$_GET['id']}");
+
+
+                            }
+            }else {
+                echo "<p class='bg-danger'>CRSF Token Failed</p>";
+            }
+
+
+            
+         
+        }
+    }
+
+
+
+
     // Admin Users
 
     function display_users () {
@@ -427,18 +529,19 @@ echo $category;
     
         while ($row = fetch_array($query)) {
     
-            $user_id     = $row['user_id'];
-            $username  = $row['username'];
-            $email  = $row['email'];
-            $password  = $row['password'];
+            $user_id    = $row['user_id'];
+            $username   = $row['username'];
+            $email      = $row['email'];
+            $user_photo = display_image($row['user_photo']);
     
     $user = <<<DELIMETER
     
     <tr>
         <td>{$user_id}</td>
+        <td><img width="100px" src="{$user_photo}" alt="{$row['username']} Image"></td>
         <td>{$username}</td>
         <td>{$email}</td>
-        <td><a class="btn btn-danger" href="../../resources/templates/back/delete_user.php?id={$user_id}"><span class="glyphicon glyphicon-remove"></span></a></td>
+        <td><a class="btn btn-danger" href="index.php?delete_user&id={$user_id}"><span class="glyphicon glyphicon-remove"></span></a></td>
     </tr>
     
     DELIMETER;
@@ -452,12 +555,15 @@ echo $category;
 
 
     function add_user() {
+        global $upload_directory;
 
         if (isset($_POST['add_user'])) {
 
             $crsf = form_protect();
 
         //validate crsf token
+
+        
         if (hash_equals($crsf, $_POST['crsf'])) {
 
             $username       = escape_string($_POST['username']);
@@ -466,21 +572,68 @@ echo $category;
             $user_photo     = escape_string($_FILES['file']['name']);
             $photo_temp     = $_FILES['file']['tmp_name'];
 
-            move_uploaded_file($photo_temp, UPLOAD_DIR . DS . $user_photo);
+            if (empty($username) || empty($email) || empty($password)) {
 
-            $query = query("INSERT INTO users(username, email, password) VALUES('$username', '$email', '$password')");
+                echo "<h3 class='bg-danger'>All Fields are Required</h3>";
+                //set_message("Fields are required");
+
+            } else {
+
+            move_uploaded_file($photo_temp, $upload_directory . DS . $user_photo);
+
+            $query = query("INSERT INTO users(username, email, password, user_photo) VALUES('$username', '$email', '$password', '$user_photo')");
             
             confirm($query);
 
-            set_message("User Created");
+            set_message("$username User Created");
 
             redirect("index.php?users");
+            }
 
         }else {
             echo "<p class='bg-danger'>CRSF Token Failed</p>";
         }
             
         }
+
+        
+    }
+
+
+    // function for user login
+function login_user(){
+
+   
+
+    if(isset($_POST['submit'])){
+        
+        $crsf = form_protect();
+            //validate crsf token
+        if (hash_equals($crsf, $_POST['crsf'])) {
+             $username = escape_string($_POST['username']);
+             $password = escape_string(sha1($_POST['password']));
+    
+            $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' ");
+    
+            confirm($query);
+    
+            if(mysqli_num_rows($query) === 0){
+                set_message('Your Username or Password is wrong');
+                redirect("http://localhost/daveTicket/admin/login.php");
+            }else{
+                $_SESSION['username'] = $username;
+                set_message('Welcome to Admin, ' .$username. '');
+                redirect("index.php?users");
+            }
+    
+            }else{
+                echo "<p class='bg-danger'>CRSF Token failed</p>";
+            }
+        
+    
+    }
+    
+    
     }
 
 
@@ -513,7 +666,7 @@ echo $category;
         <td align="center">{$row['cust_email']}</td>
         <td align="center">{$row['order_date']}</td>
         <td align="center">{$row['payment_status']}</td>
-        <td><a class="btn btn-danger" href="templates/delete_report.php?id={$row['report_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+        <td><a class="btn btn-danger" href="index.php?delete_report&id={$row['report_id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
        
     
     

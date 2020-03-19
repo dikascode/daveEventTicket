@@ -1,7 +1,5 @@
 <?php 
 
-if($_SERVER['REQUEST_URI'] != 'http://localhost/daveTicket/') {
-
 
 
 ob_start();
@@ -64,5 +62,3 @@ session_start();
            
             <?php  include_once("templates/side_admin_nav.php"); ?>
         </nav>
-
-    <?php } ?>
