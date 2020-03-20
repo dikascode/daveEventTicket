@@ -6,9 +6,17 @@
     define("DB_PASS", "a89a9c5f");
     define("DB_NAME", "heroku_f301b44b19a9953");
 
+    // define("DB_HOST", "localhost");
+    // define("DB_USER", "root");
+    // define("DB_PASS", "");
+    // define("DB_NAME", "dave_ticket");
+
     //define URl
-    define("ROOT_PATH", "/daveTicket/index");
+    define("ROOT_PATH", "youconnect.herokuapp.com/index");
     define("ROOT_URL", "https://youconnect.herokuapp.com/index");
+
+    // define("ROOT_PATH", "/daveTicket/index");
+    // define("ROOT_URL", "http://localhost/daveTicket/index");
 
     defined ("DS") ? null : define ("DS", DIRECTORY_SEPARATOR);
     defined ("UPLOAD_DIR") ? null : define ("UPLOAD_DIR", __DIR__ . DS . "uploads");
