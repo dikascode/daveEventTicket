@@ -20,9 +20,9 @@
 
             if($fullview) {
                 //load main layout file (html, head tags or things you want on every single page) that wraps around view
-                require('views/main.php');
+                include('views/main.php');
             } else {
-                require($view);
+                include($view);
             }
         }
     }
