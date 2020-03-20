@@ -8,7 +8,9 @@ require_once("admin_functions.php");
 <?php 
 
 if (!isset($_SESSION['username'])) {
-    redirect("http://localhost/daveTicket/admin/login.php");
+    
+    redirect("https://youconnect.herokuapp.com/admin/login.php");
+    // redirect("http://localhost/daveTicket/admin/login.php");
 } 
 
 ?>
