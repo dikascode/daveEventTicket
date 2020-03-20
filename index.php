@@ -4,32 +4,32 @@ ob_start();
     //start session 
     session_start();
     //include config
-    require('config.php');
+    include('config.php');
 
    
     // require("admin/index.php");
     // require("admin/admin_functions.php");
 
-    require("classes/meRaviQr/qrlib.php");
-    require('classes/Messages.php');
-    require('classes/Mail.php');
-    require('classes/Bootstrap.php');
-    require('classes/Controller.php');
-    require('classes/Model.php');
+    include("classes/meRaviQr/qrlib.php");
+    include('classes/Messages.php');
+    include('classes/Mail.php');
+    include('classes/Bootstrap.php');
+    include('classes/Controller.php');
+    include('classes/Model.php');
 
-    require('controllers/home.php');
-    require('controllers/events.php');
-    require('controllers/transactions.php');
-    require('controllers/about.php');
-    require('controllers/team.php');
-    require('controllers/contact.php');
+    include('controllers/home.php');
+    include('controllers/events.php');
+    include('controllers/transactions.php');
+    include('controllers/about.php');
+    include('controllers/team.php');
+    include('controllers/contact.php');
 
-    require('models/home.php');
-    require('models/event.php');
-    require('models/transaction.php');
-    require('models/about.php');
-    require('models/team.php');
-    require('models/contact.php');
+    include('models/home.php');
+    include('models/event.php');
+    include('models/transaction.php');
+    include('models/about.php');
+    include('models/team.php');
+    include('models/contact.php');
 
 
 
