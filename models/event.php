@@ -78,10 +78,6 @@
 
                 }
                 
-                // echo "<pre>";
-                // print_r($filtered_array);
-                // print_r($_SESSION);
-                // echo "</pre>";
 
             }
             
