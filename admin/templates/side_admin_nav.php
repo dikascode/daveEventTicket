@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
         <li class="active">
-            <a href="/daveTicket/admin/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <a href="http://youconnect.herokuapp.com/admin"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
         </li>
         <li class="">
             <a href="index.php?orders"><i class="fa fa-fw fa-dashboard"></i> Orders</a>

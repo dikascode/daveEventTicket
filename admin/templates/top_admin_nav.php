@@ -5,7 +5,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/daveTicket/admin/">YouConnect Admin</a>
+    <a class="navbar-brand" href="http://youconnect.herokuapp.com/admin">YouConnect Admin</a>
 </div>
 
 
