@@ -83,7 +83,7 @@
             <div class="row">
                 <div class="col-md">
                     <?php Messages::display(); ?>
-                    <?php require($view); ?>
+                    <?php include($view); ?>
                 </div>
             </div>
             
