@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php echo $_SERVER['REQUEST_URI']; ?>
   <head>
     <title>YouConnect Event Manager</title>
     <meta charset="utf-8">
