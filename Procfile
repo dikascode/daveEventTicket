@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 models/
+web: vendor/bin/heroku-php-apache2 views/
