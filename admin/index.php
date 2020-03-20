@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) {
              <?php 
 
              
-                if($_SERVER['REQUEST_URI'] == "http://youconnect.herokuapp.com/admin" || $_SERVER['REQUEST_URI'] == "http://youconnect.herokuapp.com/admin/index.php") {
+                if($_SERVER['REQUEST_URI'] == "/admin/" || $_SERVER['REQUEST_URI'] == "/admin/index.php") {
                     include("templates/admin_content.php");
                 }
 
