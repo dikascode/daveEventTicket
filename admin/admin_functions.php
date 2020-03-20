@@ -1,4 +1,5 @@
 <?php
+echo $_SERVER['REQUEST_URI'];
 
 //creating the connection
 $connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME); 
