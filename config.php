@@ -12,8 +12,8 @@
     // define("DB_NAME", "dave_ticket");
 
     //define URl
-    define("ROOT_PATH", "youconnect.herokuapp.com/index");
-    define("ROOT_URL", "https://youconnect.herokuapp.com/index");
+    define("ROOT_PATH", "/index");
+    define("ROOT_URL", "/index");
 
     // define("ROOT_PATH", "/daveTicket/index");
     // define("ROOT_URL", "http://localhost/daveTicket/index");
