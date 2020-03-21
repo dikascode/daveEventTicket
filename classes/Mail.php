@@ -15,7 +15,7 @@ require 'PHPMailer-master/src/SMTP.php';
             $mail->isSMTP(); // Enable SMTP for gmail
             $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
             $mail->SMTPAuth = true; // authentication enabled
-            $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
+            $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
             $mail->Host = "smtp.gmail.com";
             // $mail->Host = "smtp.mailtrap.io";
             $mail->Port = 587; // or 2525
@@ -36,7 +36,7 @@ require 'PHPMailer-master/src/SMTP.php';
                 echo 'Message has been sent. Thank you.';
             }else{
                 // echo 'Message could not be sent.';
-                // echo 'Mailer Error: ' . $mail->ErrorInfo;
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
             }
         }
 
