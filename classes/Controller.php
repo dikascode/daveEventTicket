@@ -17,9 +17,9 @@
         protected function returnView($viewmodel, $fullview) {
             //name views folder same as class, file should also be named whatever the action is
             echo __DIR__;
-             $view = __DIR__ . '/'. get_class($this). '/' . $this->action. '.php'; // use this for localhost
+            // $view = 'views/'. get_class($this). '/' . $this->action. '.php'; // use this for localhost
 
-        //  $view = get_class($this). '/' . $this->action. '.php'; //deployed state is including app/views cos it's mvc
+            $view = get_class($this). '/' . $this->action. '.php'; //deployed state is including app/views cos it's mvc
 
             if($fullview) {
                 echo __DIR__ . " fullview";
