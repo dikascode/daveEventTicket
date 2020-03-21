@@ -24,7 +24,7 @@
             if($fullview) {
                 echo __DIR__;
                 //load main layout file (html, head tags or things you want on every single page) that wraps around view
-                include(__DIR__.'/main.php');
+                include('views/main.php');
             } else {
                 include($view);
             }
