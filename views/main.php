@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php echo $_SERVER['REQUEST_URI']; ?>
+<!-- <?php echo $_SERVER['REQUEST_URI']; ?> -->
   <head>
     <title>YouConnect Event Manager</title>
     <meta charset="utf-8">
@@ -91,7 +91,7 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-					echo $view ."<br>";
+					// echo $view ."<br>";
 						include(strtolower($view)); //remove strtolower if working in localhost
 					?>
                 </div>
