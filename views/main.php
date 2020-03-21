@@ -92,7 +92,7 @@
                     <?php Messages::display(); ?>
 					<?php 
 
-					echo __DIR__ . "main.php";
+					echo __DIR__ . " main.php";
 						include($view); 
 
 						// var_dump( realpath(__DIR__ . "/../../" . $view) );
