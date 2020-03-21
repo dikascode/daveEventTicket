@@ -1,5 +1,5 @@
 <?php
-
+echo __DIR__;
     class Home extends Controller {
         protected function Index() {
             $viewmodel = new HomeModel();
