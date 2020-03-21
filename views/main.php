@@ -91,7 +91,7 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-						include(__DIR__ . "../" . $view); 
+						include(__DIR__ . "/../" . $view); 
 
 						var_dump( realpath(__DIR__ . "/../../" . $view) );
 						var_dump( realpath(__DIR__ . "/index.php") );
