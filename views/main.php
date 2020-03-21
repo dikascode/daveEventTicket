@@ -91,7 +91,7 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-
+					echo $view;
 					echo __DIR__ . " main.php";
 						include( __DIR__ . "/" .$view); 
 
