@@ -93,7 +93,7 @@
 					<?php 
 
 					echo __DIR__;
-						include("../../" . $view); 
+						include($view); 
 
 						var_dump( realpath(__DIR__ . "/../../" . $view) );
 						var_dump( realpath(__DIR__ . "/index.php") );
