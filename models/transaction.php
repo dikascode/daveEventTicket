@@ -161,8 +161,9 @@
                         $qrimage = $qrImgName.".png"; 
                         //$workDir = $_SERVER['HTTP_HOST'];
                         // $qrlink = $workDir."/qrcode".$qrImgName.".png";
-
-                        $path = "classes/userQr/{$qrimage}";
+                        
+                        echo __DIR__;
+                        $path = "app/classes/userQr/{$qrimage}";
             
                         // echo "<img width='300px' src='{$path}' alt=''>";
 
