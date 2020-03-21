@@ -90,7 +90,9 @@
 
 				?>
                     <?php Messages::display(); ?>
-                    <?php include($view); ?>
+					<?php 
+						include(__DIR__ . $view); 
+					?>
                 </div>
             </div>
             
