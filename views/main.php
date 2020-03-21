@@ -90,7 +90,12 @@
 
 				?>
                     <?php Messages::display(); ?>
-                    <?php include($view); ?>
+					<?php 
+
+						set_include_path(get_include_path().":". $view);
+					
+						//include(); 
+					?>
                 </div>
             </div>
             
