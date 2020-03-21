@@ -95,8 +95,9 @@
 					echo get_include_path();
 
 						// set_include_path(get_include_path().":"."/path/to/new/folder");
+						// "/relative/path/from/current/file"
 					
-						include($view); 
+						include(__DIR__ . $view); 
 					?>
                 </div>
             </div>
