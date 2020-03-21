@@ -92,11 +92,11 @@
                     <?php Messages::display(); ?>
 					<?php 
 
-					echo __DIR__;
+					echo __DIR__ . "main.php";
 						include($view); 
 
-						var_dump( realpath(__DIR__ . "/../../" . $view) );
-						var_dump( realpath(__DIR__ . "/index.php") );
+						// var_dump( realpath(__DIR__ . "/../../" . $view) );
+						// var_dump( realpath(__DIR__ . "/index.php") );
 					?>
                 </div>
             </div>
