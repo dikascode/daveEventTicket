@@ -92,11 +92,7 @@
                     <?php Messages::display(); ?>
 					<?php 
 					echo $view ."<br>";
-					echo __DIR__;
-						include("home/index.php"); 
-
-						// var_dump( realpath(__DIR__ . "/../../" . $view) );
-						// var_dump( realpath(__DIR__ . "/index.php") );
+						include(strtolower($view)); //remove strtolower if working in localhost
 					?>
                 </div>
             </div>

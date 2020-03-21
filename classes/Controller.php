@@ -22,7 +22,6 @@
             $view = get_class($this). '/' . $this->action. '.php'; //deployed state is including app/views cos it's mvc
 
             if($fullview) {
-                echo __DIR__;
                 //load main layout file (html, head tags or things you want on every single page) that wraps around view
                 include('views/main.php');
             } else {
