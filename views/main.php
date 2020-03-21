@@ -90,15 +90,7 @@
 
 				?>
                     <?php Messages::display(); ?>
-					<?php 
-
-					echo get_include_path();
-
-						// set_include_path(get_include_path().":"."/path/to/new/folder");
-						// "/relative/path/from/current/file"
-					
-						include(__DIR__ . "/" . $view); 
-					?>
+                    <?php include($view); ?>
                 </div>
             </div>
             
