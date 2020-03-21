@@ -92,9 +92,11 @@
                     <?php Messages::display(); ?>
 					<?php 
 
-						set_include_path(get_include_path().":". $view);
+					echo get_include_path();
+
+						// set_include_path(get_include_path().":"."/path/to/new/folder");
 					
-						//include(); 
+						include($view); 
 					?>
                 </div>
             </div>
