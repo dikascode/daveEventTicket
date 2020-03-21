@@ -22,9 +22,9 @@
 
             if($fullview) {
                 //load main layout file (html, head tags or things you want on every single page) that wraps around view
-                include('main.php');
+                include('views/main.php');
             } else {
-                include($view);
+                include(__DIR__ . "/" . $view);
             }
         }
     }
