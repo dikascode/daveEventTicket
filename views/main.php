@@ -92,7 +92,7 @@
                     <?php Messages::display(); ?>
 					<?php 
 					// echo $view ."<br>";
-						include(strtolower($view)); //remove strtolower if working in localhost
+						include(lcfirst($view)); //remove strtolower if working in localhost
 					?>
                 </div>
             </div>
