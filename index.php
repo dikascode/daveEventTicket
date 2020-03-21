@@ -83,7 +83,7 @@ $rave = <<<DELIMETER
           amount = {$_SESSION['ticket_total_price']};
           txref = response.tx.txRef, chargeResponse = response.tx.chargeResponseCode;
           if (chargeResponse == "00" || chargeResponse == "0") {
-            window.location = "index?controller=transactions&txref="+txref+"&amt="+amount+"&cur="+currency+"&name="+cust_name; //Add your success page here
+            window.location = "app/views/transactions/index.php?txref="+txref+"&amt="+amount+"&cur="+currency+"&name="+cust_name; //Add your success page here
           } else {
             window.location = "../public/payverification_fail.php?txref="+txref;  //Add your failure page here
           }
