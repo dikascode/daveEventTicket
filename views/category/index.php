@@ -1,5 +1,12 @@
+<?php 
+
+    if(isset($viewmodel) && count($viewmodel) > 0):
+    
+?>
 <div class="row" style="background-color: grey; padding: 2%;">
+
 <div class="col-md">
+
 <div class="row">
 	<div class="col-md">
 		<h2 style="font-weight: bold; color:#FDBE34">Ongoing Events >>></h2>
@@ -19,7 +26,7 @@ for($i=0; $i<count($viewmodel); $i++ ){
 	
 	
 ?>
-	<div style="margin-bottom: 3%;" class="col-md-6 col-lg-3">
+	<div style="margin-bottom: 3%;" class="col-12 col-sm-6 col-md-3 col-lg-3">
 		<div  style="background-color:#00043C; border-radius: 15px;">
 			<img src="assets/images/<?php echo $viewmodel[$i]['small_image']; ?>" class="img-fluid mx-auto" alt="<?php echo $viewmodel[$i]['small_image']; ?>"> <br />
 			<span style="margin-left: 5%; font-weight: bold;  color:#FDBE34;"><?php echo substr($viewmodel[$i]['name'], 0, 30); ?></span> <br>
@@ -74,3 +81,16 @@ foreach ($categories as $row):
 
 <?php endforeach;?>
 </div>
+
+<?php else: ?>
+
+<div>
+<div class="row">
+    <div class="col-md-12">
+    <h1>This Category doesn't have any registered Event</h1>
+    <p>Please go back <a href="<?php echo ROOT_URL; ?>">HOME</a></p>
+    </div>
+</div>
+</div>
+
+<?php endif; ?>

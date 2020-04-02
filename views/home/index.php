@@ -1,4 +1,6 @@
-<?php session_destroy(); ?>
+<?php 
+	session_destroy(); 
+?>
 
 <?php
 
@@ -58,14 +60,20 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         	<div class="container-fluid">
         		<div id="carousel-example" class="carousel slide" data-ride="carousel">
         			<div class="carousel-inner row w-100 mx-auto" role="listbox">
-					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-					<div  style="background-color: #00043C;">
+						
+					
 					<?php
 
 					$tickets_query = "SELECT * FROM tickets LEFT JOIN events ON tickets.event_id = events.id WHERE tickets.event_id = {$viewmodel[0]['id']}";
 					$result = mysqli_query($connection, $tickets_query);
 
+					//compare dates
+            
+					if(strtotime($viewmodel[0]['date']) >= strtotime(date('d F, Y')) ) {
+
 					?>
+					<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+					<div  style="background-color: #00043C;">
 					<img src="assets/images/<?php echo $viewmodel[0]['small_image']; ?>" class="img-fluid mx-auto" alt="<?php echo $viewmodel[0]['small_image']; ?>"> <br />
 					<span style="margin-left: 5%; font-weight: bold; color:#FDBE34;"><?php echo substr($viewmodel[0]['name'], 0, 25); ?></span> <br>
 					<span style="margin-left: 5%; color:white;"><i class="fa fa-map-marker"></i> <?php echo substr($viewmodel[0]['location'], 0, 30); ?></span> <br>
@@ -78,12 +86,20 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 					<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[0]['id']; ?>">Buy Ticket</a>
 					</div>
 					</div>
+
+					<?php } ?>
+
+
 					<?php 
 					
-					for($i=1; $i<6; $i++ ){
+					for($i=1; $i<count($viewmodel); $i++ ){
 
-					$tickets_query = "SELECT * FROM tickets LEFT JOIN events ON tickets.event_id = events.id WHERE tickets.event_id = {$viewmodel[$i]['id']}";
+					$tickets_query = "SELECT * FROM tickets LEFT JOIN events ON tickets.event_id = events.id WHERE tickets.event_id = {$viewmodel[$i]['id']} LIMIT 5";
 					$result = mysqli_query($connection, $tickets_query);
+
+					//compare dates
+            
+					if(strtotime($viewmodel[$i]['date']) >= strtotime(date('d F, Y')) ) {
 				
 					?>
 						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
@@ -100,7 +116,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 							<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
 						</div>
 						</div>
-					<?php }?>
+					<?php }}?>
         			</div>
         			<a class="" href="#carousel-example" role="button" data-slide="prev">
 						<span aria-hidden="true"></span>
@@ -128,13 +144,17 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 </div>
 <div class="row">
+
 <?php 
 
-for($i=0; $i<8; $i++ ){
+for($i=0; $i<count($viewmodel); $i++ ){
 
-	$tickets_query = "SELECT * FROM tickets LEFT JOIN events ON tickets.event_id = events.id WHERE tickets.event_id = {$viewmodel[$i]['id']}";
+	$tickets_query = "SELECT * FROM tickets LEFT JOIN events ON tickets.event_id = events.id WHERE tickets.event_id = {$viewmodel[$i]['id']} LIMIT 8";
 	$result = mysqli_query($connection, $tickets_query);
-	
+
+		//compare dates
+            
+		if(strtotime($viewmodel[$i]['date']) >= strtotime(date('d F, Y')) ) {
 	
 ?>
 	<div style="margin-bottom: 3%;" class="col-md-6 col-lg-3">
@@ -149,16 +169,17 @@ for($i=0; $i<8; $i++ ){
 			<?php } ?>
 			<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span> <br>
 			<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
+			
 		</div>
 	</div>
 	
 
-<?php } ?>
+<?php }} ?>
 </div>
 
 <div class="row">
 	<div class="col-md">
-		<a href="<?php echo ROOT_PATH ?>?controller=events" style="font-weight: bold; color:#FDBE34">All Event >>></a>
+		<a href="<?php echo ROOT_PATH ?>?controller=events" style="font-weight: bold; color:#FDBE34">All Events >>></a>
 	</div>
 
 </div>

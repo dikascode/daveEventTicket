@@ -81,7 +81,7 @@
 				        			<span class="fa fa-phone"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Phone:</span> <a href="tel://1234567920">+234 7089355064</a></p>
+					            <p><span>Phone: </span>+234 81 540 54682</p>
 					          </div>
 				          </div>
 								</div>
@@ -101,7 +101,7 @@
 				        			<span class="fa fa-globe"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+					            <p><span>Website</span> <a href="#">www.uconnect.com</a></p>
 					          </div>
 				          </div>
 								</div>

@@ -187,7 +187,7 @@ function display_image ($picture) {
     <td>{$row['name']}</td>
     <td><a href="index.php?edit_event&id={$row['id']}"><img width="100px" src="{$product_image}" alt="Image {$row['name']}"></a></td>
     <td>$category_title</td>
-    <td><a href="index.php?ticket_class&id={$row['id']}">Add Ticket Class</a></td>
+    <td><a href="index.php?ticket_class&id={$row['id']}">Ticket Class</a></td>
     <td><a class="btn btn-danger" href="index.php?delete_event&id={$row['id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
     
 

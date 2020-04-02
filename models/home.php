@@ -4,7 +4,6 @@
             $this->query('SELECT * FROM events ORDER BY id DESC');
             $rows = $this->resultSet();
             return $rows;
-
         
         }
     }

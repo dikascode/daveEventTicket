@@ -5,7 +5,25 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.cat_display {
+  height: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FDBE34 !important;
+  background-color: black;
+  margin-bottom: 2%;
+  padding: 1%;
+  text-align: center;
+  line-height: 70px;
+  background-image: url(../images/1.jpg);
+  background-attachment: scroll;
+  border-radius: 1%;
+}
 
+.cat_display:hover {
+  background-image: url(../images/2.jpg);
+  color: rgb(0, 0, 0) !important;
+}
 
  .submitButton:hover {
   color: #FDBE34 !important;
@@ -8326,13 +8344,15 @@ h1, h2, h3, h4, h5,
           border-color: #fff; }
   .owl-carousel.home-slider {
     position: relative;
-    height: 700px;
+    height: 500px;
     z-index: 0; }
+
+    
     .owl-carousel.home-slider .slider-item {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
-      height: 700px;
+      height: 500px;
       position: relative;
       z-index: 0;
       overflow: hidden; }
@@ -8347,10 +8367,20 @@ h1, h2, h3, h4, h5,
         padding: 0;
         z-index: 0; }
       @media (max-width: 1199.98px) {
+        .owl-carousel.home-slider {
+          height: 300px;
+        }
         .owl-carousel.home-slider .slider-item {
-          background-position: center center !important; } }
+          height: 300px;
+          background-position: center center !important; } 
+
+          .owl-carousel.home-slider .slider-item .slider-text {
+            height: 300px;
+          }
+        
+        }
       .owl-carousel.home-slider .slider-item .slider-text {
-        height: 700px;
+        height: 500px;
         position: relative; }
         .owl-carousel.home-slider .slider-item .slider-text .text {
           z-index: 0;
@@ -8364,6 +8394,9 @@ h1, h2, h3, h4, h5,
           line-height: 1;
           text-shadow: 0px 3px 25px rgba(0, 0, 0, 0.1); }
           @media (max-width: 991.98px) {
+            .owl-carousel.home-slider .slider-item .slider-text {
+              height: 300px;
+            }
             .owl-carousel.home-slider .slider-item .slider-text h1 {
               font-size: 40px;
               letter-spacing: 3px; } }

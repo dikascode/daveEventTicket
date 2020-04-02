@@ -20,16 +20,18 @@ ob_start();
     include('controllers/home.php');
     include('controllers/events.php');
     include('controllers/transactions.php');
-    include('controllers/about.php');
-    include('controllers/team.php');
+    // include('controllers/about.php');
+    // include('controllers/team.php');
     include('controllers/contact.php');
+    include('controllers/category.php');
 
     include('models/home.php');
     include('models/event.php');
     include('models/transaction.php');
-    include('models/about.php');
-    include('models/team.php');
+    // include('models/about.php');
+    // include('models/team.php');
     include('models/contact.php');
+    include('models/category.php');
 
 
 

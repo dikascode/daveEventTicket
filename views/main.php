@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- <?php echo $_SERVER['REQUEST_URI']; ?> -->
   <head>
-    <title>YouConnect Event Manager</title>
+    <title>UConnect Event Manager</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -32,31 +32,35 @@
         <link rel="stylesheet" href="assets/css_cmi/media-queries.css">
 		<link rel="stylesheet" href="assets/css_cmi/carousel.css">
 	
+		<!-- Social media share plugin -->
+		<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e8611a636c81b0012fbae5b&product=inline-share-buttons" async="async"></script>
+	
   </head>
   <body>
 
     <div class="container pt-5">
 			<div class="row justify-content-between">
 				<div class="col">
-					<a class="navbar-brand" href="<?php echo ROOT_URL; ?>" style="font-size:400%; margin:0;">Y<span>C</span></a>
+					<a class="navbar-brand" href="<?php echo ROOT_URL; ?>" style="font-size:400%; margin:0;">U<span>C</span></a>
 				</div>
 				<div class="col d-flex justify-content-end">
 					<div class="social-media">
-		    		<p class="mb-0 d-flex">
+		    		<!-- <p class="mb-0 d-flex">
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fab fa-facebook"><i class="sr-only">Facebook</i></span></a>
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fab fa-twitter"><i class="sr-only">Twitter</i></span></a>
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fab fa-instagram"><i class="sr-only">Instagram</i></span></a>
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fab fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-		    		</p>
-	        </div>
+		    		</p> -->
+	        		</div>
 				</div>
 			</div>
 		</div>
+
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	    
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
+	        <span class="navbar-toggler-icon"></span>
 	      </button>
 				<form action="#" class="searchform order-lg-last">
           <div class="form-group d-flex">
@@ -67,8 +71,6 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active"><a href="<?php echo ROOT_URL ?>" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="<?php echo ROOT_URL ?>?controller=about" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="<?php echo ROOT_URL ?>?controller=team" class="nav-link">Our team</a></li>
 	          <li class="nav-item"><a href="<?php echo ROOT_URL ?>?controller=contact" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
@@ -78,7 +80,7 @@
 
        
 
-        <div class="container-fluid">
+    <div class="container-fluid">
 
             <div class="row">
                 <div class="col-md">
@@ -91,13 +93,13 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-					// echo $view ."<br>";
+						//include($view);
 						include(lcfirst($view)); //remove strtolower if working in localhost
 					?>
                 </div>
             </div>
             
-        </div>
+    </div>
 
        <!-- /.container -->
     </body>
@@ -121,23 +123,19 @@
 								<div class="row justify-content-center">
 									<div class="col-md-12 col-lg-10">
 										<div class="row">
-											<div class="col-md-4 mb-md-0 mb-4">
-												<h2 class="footer-heading">Services</h2>
+											<div class="col-md-6 mb-md-0 mb-4">
+												<h2 class="footer-heading">Event Consultancy</h2>
 												<ul class="list-unstyled">
 												<li class="py-1 d-block">e-Ticket Sale</li>
 												<li class="py-1 d-block">Events Management</li>
 												
 												</ul>
 											</div>
-									<div class="col-md-4 mb-md-0 mb-4">
-											<h2 class="footer-heading">About</h2>
-											<ul class="list-unstyled">
-										
-												<li><a href="<?php echo ROOT_URL ?>?controller=team" class="py-1 d-block">Team</a></li>
-										
-											</ul>
-									</div>
-								
+
+											<div class="col-md-6 mb-md-0 mb-4">
+												Questions or enquiries? <a href="<?php echo ROOT_URL; ?>?controller=contact">You can send us a message</a>
+												<p style="color:white;">You can also call us on +234 81 540 54682</p>
+											</div>
 										</div>
 									</div>
 								</div>
