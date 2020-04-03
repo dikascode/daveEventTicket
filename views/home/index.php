@@ -167,7 +167,7 @@ for($i=0; $i<count($viewmodel); $i++ ){
 			<?php } else{ ?>
 			<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(0000); ?></span> <br>
 			<?php } ?>
-			<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span> <br>
+			<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span>  <br>
 			<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
 			
 		</div>
@@ -179,6 +179,7 @@ for($i=0; $i<count($viewmodel); $i++ ){
 
 <div class="row">
 	<div class="col-md">
+	<div id="date-countdown"></div>
 		<a href="<?php echo ROOT_PATH ?>?controller=events" style="font-weight: bold; color:#FDBE34">All Events >>></a>
 	</div>
 

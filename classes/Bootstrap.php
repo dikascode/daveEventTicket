@@ -36,18 +36,22 @@
                         return new $this->controller($this->action, $this->request);
                     } else{
                         //Method doesn't exist
-                        echo '<h1>Method does not exist</h1>';
+                        echo "<h1>Oops, it is ok to get lost, please go back <a href='".ROOT_URL."'>HOME</a></h1>";
+                        //'<h1>Method does not exist</h1>';
                         return;
                     }
 
                 } else {
                     //Base contoller not found
-                    echo '<h1>Base Controller does not exist</h1>';
+                    echo "<h1>Oops, it is ok to get lost, please go back <a href='".ROOT_URL."'>HOME</a></h1>";
+                    //'<h1>Base Controller does not exist</h1>';
                     return;
                 }
             } else {
                  //Contoller class not found
-                 echo '<h1>Controller class does not exist</h1>';
+                 echo "<h1>Oops, it is ok to get lost, please go back <a href='".ROOT_URL."'>HOME</a></h1>";
+                 
+                 //'<h1>Controller class does not exist</h1>';
                  return;
             }
         }

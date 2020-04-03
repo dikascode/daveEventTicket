@@ -38,7 +38,7 @@
   </head>
   <body>
 
-    <div class="container pt-5">
+    <div class="container pt-2">
 			<div class="row justify-content-between">
 				<div class="col">
 					<a class="navbar-brand" href="<?php echo ROOT_URL; ?>" style="font-size:400%; margin:0;">U<span>C</span></a>
@@ -61,13 +61,19 @@
 	    
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
-	      </button>
-				<form action="#" class="searchform order-lg-last">
-          <div class="form-group d-flex">
-            <input type="text" class="form-control pl-3" placeholder="Search">
-            <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
-          </div>
-        </form>
+		  </button>
+		  
+			<form action="#" class="searchform order-lg-last">
+				<div class="form-group d-flex">
+					<input id="search" type="text" class="form-control pl-3" placeholder="Search Event Name">
+					<button type="submit" class="form-control search"><span class="fa fa-search"></span></button>
+				</div>
+				<!-- Display search -->
+			<div id="displaySearch" style="width: 300px; height: 50px; position: absolute; top:60px; z-index: 10;"></div>
+			</form>
+
+			
+			
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active"><a href="<?php echo ROOT_URL ?>" class="nav-link">Home</a></li>
@@ -76,9 +82,8 @@
 	      </div>
 	    </div>
 	  </nav>
-    <!-- END nav -->
-
-       
+	<!-- END nav -->
+	
 
     <div class="container-fluid">
 
@@ -93,8 +98,8 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-						//include($view);
-						include(lcfirst($view)); //remove strtolower if working in localhost
+						include($view);
+						//include(lcfirst($view)); //remove lcfirst() if working in localhost
 					?>
                 </div>
             </div>
@@ -157,7 +162,8 @@
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+ <!-- Countdown jquery -->
+ <script src="assets/js/jquery.countdown.min.js"></script>
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
@@ -173,6 +179,8 @@
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <script src="assets/js/google-map.js"></script>
   <script src="assets/js/main.js"></script>
+
+ 
 
 
   <!-- Carousel Script for multiple items -->

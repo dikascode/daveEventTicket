@@ -149,24 +149,22 @@
                         $price = '&#8358; '. number_format($rows[$key-1]['price']);
 
 
-                        /*********************************QR Code Testing ********************************************* */
+                        /*********************************QR Code********************************************* */
                         $price_for_display = number_format($rows[$key-1]['price']);
                         
                         $qr_text = "Name: ". $cust_name . ". Number: ". $cust_number. ". Event: " . $rows[$key-1]['name']. ". Ticket Class: " . $rows[$key-1]['class'] . ". Ticket Number: " . $ticket_number . ". Ticket Price:N " . $price_for_display . "";
 
-                        $qrImgName = "YouConnect".rand();
+                        $qrImgName = "UConnect".rand();
                         //$final ="This is Dika TESTing qr testing";
-                        //$dev = " ...Develop By Ravi Khadka";
+
                         $qrs = QRcode::png($qr_text,"classes/userQr/$qrImgName.png","H","3","3");
-                        $qrimage = $qrImgName.".png"; 
+                        $qrimage = $qrImgName.".png";
+
                         //$workDir = $_SERVER['HTTP_HOST'];
                         // $qrlink = $workDir."/qrcode".$qrImgName.".png";
                         
-                        echo __DIR__;
                         $path = "app/classes/userQr/{$qrimage}";
             
-                        // echo "<img width='300px' src='{$path}' alt=''>";
-
 
                         $htmlBody = "
                                     <div style='width:650px; height:600px; padding:2%;'>
@@ -176,8 +174,8 @@
 
                                         <div style='width:45%; height:100%; float:left; box-sizing: border-box; background-color:black; padding:1%;'>
                                         <h3 align=center style='color:white;'>{$rows[$key-1]['name']} Ticket Details</h3>
-                                        <p align=left style='color:white;'<span style='font-weight:bold;'>Ticket Class: {$rows[$key-1]['class']}</span></p> <hr />
                                         <p align=left style='color:white;'><span style='font-weight:bold;'>Ticket Number:</span> {$ticket_number} </p> <hr />
+                                        <p align=left style='color:white;'<span style='font-weight:bold;'>Ticket Class: {$rows[$key-1]['class']}</span></p> <hr />
                                         <p align=left style='color:white;'><span style='font-weight:bold;'>Ticket Price:</span> {$price} </p> <hr />
                                         <p align=left style='color:white;'><span style='font-weight:bold;'>Ticket Holder:</span> {$cust_name} </p> <hr />
                                         <p align=left style='color:white;'><span style='font-weight:bold;'>Holder Number:</span> {$cust_number} </p> <hr />

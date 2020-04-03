@@ -10,6 +10,7 @@ ob_start();
     // require("admin/index.php");
     // require("admin/admin_functions.php");
 
+    //include("searchplace.php");
     include("classes/meRaviQr/qrlib.php");
     include('classes/Messages.php');
     include('classes/Mail.php');
@@ -66,7 +67,7 @@ $rave = <<<DELIMETER
     
 
 
-    var flw_ref = "", chargeResponse = "", trxref = "YOUCONNECT"+ Math.random(), API_publicKey = "FLWPUBK_TEST-6921d097ab745d1e299bccf98fbc7ac1-X";
+    var flw_ref = "", chargeResponse = "", trxref = "UCONNECT"+ Math.random(), API_publicKey = "FLWPUBK_TEST-6921d097ab745d1e299bccf98fbc7ac1-X";
 
     getpaidSetup(
       {
@@ -76,7 +77,7 @@ $rave = <<<DELIMETER
         customer_phone: cust_number,
         currency: "NGN",
         cust_name: cust_name,
-      	txref: "YOUCONNECT"+ Math.random(),
+      	txref: "UCONNECT"+ Math.random(),
       	meta: [{metaname:"flightID", metavalue: "AP1234"}],
         onclose:function(response) {
         },

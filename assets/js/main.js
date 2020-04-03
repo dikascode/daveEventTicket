@@ -12,6 +12,23 @@
     scrollProperty: 'scroll'
   });
 
+  //Search load function
+
+  $('#search').keyup(function(){
+
+
+
+	//get value from the input field
+
+	var event = $(this).val();
+
+	//send the data to search.php using jQuery load method
+
+	$('#displaySearch').load("searchplace.php", {eventOutput:event});
+
+
+});
+
 
 	var fullHeight = function() {
 

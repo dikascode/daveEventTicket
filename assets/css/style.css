@@ -22,7 +22,7 @@
 
 .cat_display:hover {
   background-image: url(../images/2.jpg);
-  color: rgb(0, 0, 0) !important;
+  color: white !important;
 }
 
  .submitButton:hover {
