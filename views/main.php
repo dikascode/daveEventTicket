@@ -98,8 +98,8 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-						include($view);
-						//include(lcfirst($view)); //remove lcfirst() if working in localhost
+						//include($view);
+						include(lcfirst($view)); //remove lcfirst() if working in localhost
 					?>
                 </div>
             </div>
@@ -120,8 +120,8 @@
 								<p>We are an innovative team that's helping businesses execute successful events using tech.</p>
 								<ul class="ftco-footer-social p-0">
 		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
-		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
-		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
+		              <li class="ftco-animate"><a href="https://www.facebook.com/uconnect.ng" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
+		              <li class="ftco-animate"><a href="https://www.instagram.com/uconnect.ng" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
 		            </ul>
 							</div>
 							<div class="col-md-8">
@@ -129,10 +129,10 @@
 									<div class="col-md-12 col-lg-10">
 										<div class="row">
 											<div class="col-md-6 mb-md-0 mb-4">
-												<h2 class="footer-heading">Event Consultancy</h2>
+												<h2 class="footer-heading">Services</h2>
 												<ul class="list-unstyled">
 												<li class="py-1 d-block">e-Ticket Sale</li>
-												<li class="py-1 d-block">Events Management</li>
+												<li class="py-1 d-block">Event Consultancy</li>
 												
 												</ul>
 											</div>
@@ -162,8 +162,8 @@
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
- <!-- Countdown jquery -->
- <script src="assets/js/jquery.countdown.min.js"></script>
+ 
+
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery-migrate-3.0.1.min.js"></script>

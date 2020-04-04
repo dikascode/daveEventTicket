@@ -10,7 +10,6 @@ ob_start();
     // require("admin/index.php");
     // require("admin/admin_functions.php");
 
-    //include("searchplace.php");
     include("classes/meRaviQr/qrlib.php");
     include('classes/Messages.php');
     include('classes/Mail.php');

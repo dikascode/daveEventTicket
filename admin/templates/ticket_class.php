@@ -1,13 +1,8 @@
 <div id="page-wrapper">
 
 <div class="container-fluid">
-
-
-
-
-
 <h1 class="page-header">
-Event Ticket Class
+<?php echo  $_SESSION['class_name']; ?> Ticket Class
 
 </h1>
 
@@ -54,6 +49,8 @@ Event Ticket Class
     <th>id</th>
     <th>Title</th>
     <th>Price</th>
+    <th>Numbers Sold</th>
+    <th>Total Amount</th>
 </tr>
 </thead>
 

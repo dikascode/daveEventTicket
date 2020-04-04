@@ -179,7 +179,6 @@ for($i=0; $i<count($viewmodel); $i++ ){
 
 <div class="row">
 	<div class="col-md">
-	<div id="date-countdown"></div>
 		<a href="<?php echo ROOT_PATH ?>?controller=events" style="font-weight: bold; color:#FDBE34">All Events >>></a>
 	</div>
 

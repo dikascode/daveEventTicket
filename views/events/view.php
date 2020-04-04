@@ -26,6 +26,7 @@
     
     <div class="col-lg-7 col-sm-push-5">
         <div style="background-color: #00043C; padding:2%; border-radius:1%" class="event_desc">
+        <h3 style="color: white;"><?php echo $viewmodel[0]['name']; ?></h3>
         <p style="color: #FDBE34;">
         <?php echo $viewmodel[0]['description']; ?>
         </p>

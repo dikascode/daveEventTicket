@@ -174,6 +174,8 @@ function display_image ($picture) {
     confirm($query);
 
     while($row = fetch_array($query)) {
+    
+    $_SESSION['class_name'] = $row['name'];
 
     $category_title =  show_event_category_title ($row['cat_id']);
 
@@ -455,25 +457,41 @@ $query = query("SELECT * FROM tickets WHERE event_id = {$_GET['id']}");
 
     while ($row = fetch_array($query)) {
 
-        $id     = $row['ticket_id'];
-        $title  = $row['class'];
-        $price  = $row['price'];
+        $ticket_data = query("SELECT ticket_price, ticket_quantity FROM reports WHERE ticket_id = {$row['ticket_id']}");
+        confirm($ticket_data);
+            $id     = $row['ticket_id'];
+            $title  = $row['class'];
+            $price  = number_format($row['price']);
 
-$category = <<<DELIMETER
+        $t_price = array();
+        $t_number = array();
 
-<tr>
-    <td>{$id}</td>
-    <td>{$title}</td>
-    <td>{$price}</td>
-    <td><a class="btn btn-danger" href="index.php?delete_ticket_class&t_id={$row['ticket_id']}&id={$_GET['id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
-</tr>
+        //obtain the total number and amount sold for each ticket
+        while ($sale_data = mysqli_fetch_assoc($ticket_data)) {
 
-DELIMETER;
+            $t_price[] = $sale_data['ticket_price'];
+            $t_number[] = $sale_data['ticket_quantity'];
 
-echo $category;
-
+            
     }
 
+    $ticket_price       = number_format(array_sum($t_price));
+    $ticket_quantity    = (array_sum($t_number));
+
+    $category = <<<DELIMETER
+    <tr>
+        <td>{$id}</td>
+        <td>{$title}</td>
+        <td>&#8358; {$price}</td>
+        <td>{$ticket_quantity}</td>
+        <td>&#8358; {$ticket_price}</td>
+        <td><a class="btn btn-danger" href="index.php?delete_ticket_class&t_id={$row['ticket_id']}&id={$_GET['id']}"><span class="glyphicon glyphicon-remove"></span></a></td>
+        
+    </tr>
+    
+    DELIMETER;
+echo $category;
+}
 }
 
 

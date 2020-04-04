@@ -9,8 +9,8 @@ require_once("admin_functions.php");
 
 if (!isset($_SESSION['username'])) {
     
-    // redirect("https://youconnect.herokuapp.com/admin/login.php");
-    redirect("http://localhost/daveTicket/admin/login.php");
+    redirect("https://youconnect.herokuapp.com/admin/login.php");
+    // redirect("http://localhost/daveTicket/admin/login.php");
 } 
 
 ?>
@@ -24,14 +24,15 @@ if (!isset($_SESSION['username'])) {
 
                 //for deployed state
 
-                // if($_SERVER['REQUEST_URI'] == "/admin/" || $_SERVER['REQUEST_URI'] == "/admin/index.php") {
-                //     include("templates/admin_content.php");
-                // }
-                
-                //for localhost
-                if($_SERVER['REQUEST_URI'] == "/daveTicket/admin/" || $_SERVER['REQUEST_URI'] == "/daveTicket/admin/index.php") {
+                if($_SERVER['REQUEST_URI'] == "/admin/" || $_SERVER['REQUEST_URI'] == "/admin/index.php") {
                     include("templates/admin_content.php");
                 }
+                
+                //for localhost
+                
+                // if($_SERVER['REQUEST_URI'] == "/daveTicket/admin/" || $_SERVER['REQUEST_URI'] == "/daveTicket/admin/index.php") {
+                //     include("templates/admin_content.php");
+                // }
 
                 if(isset($_GET['orders'])) {
                     include("templates/orders.php");
