@@ -20,6 +20,13 @@ class Events extends Controller {
         $this->returnView($viewmodel->ticketSale(), true);
        
     }
+
+
+    protected function confirm() {
+        $viewmodel = new EventModel();
+        $this->returnView($viewmodel->confirm(), true);
+       
+    }
 }
 
 ?>

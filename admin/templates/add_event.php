@@ -91,7 +91,7 @@
               <?php get_categories_add_event_page() ?>
             
           </select>
-  </div>
+      </div>
 
 
       <!-- Product Brands-->

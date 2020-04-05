@@ -100,15 +100,79 @@
             $this->query('SELECT * FROM tickets, events WHERE tickets.event_id = events.id AND tickets.event_id = :id');
             $this->bind(':id', $_GET['id']);
             $rows = $this->resultSet();
-                // echo "<pre>";
-                // print_r($_SESSION);
-                // echo "</pre>";
+               
             return $rows;
 
             } else {
                 header('Location: '.ROOT_PATH);
             }
         }
+
+
+
+        public function confirm() {
+            //Sanitize POST from views page
+            $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            if ($post['submit']) {
+                # code...  
+                $this->query('SELECT * FROM reports WHERE event_id = :event_id AND ticket_number = :t_number');
+
+                //select subtring from the inputted ticket details
+                $ticket_number = substr(trim($post['t_number']), 15, 10);
+
+                $this->bind(':event_id', $post['event_id']);
+                $this->bind(':t_number', $ticket_number);
+                $row = $this->resultSet();
+
+                // echo $ticket_number;
+
+
+                $this->query('SELECT * FROM confirmed_ticket WHERE ticket_number = :t_number');
+                $this->bind(':t_number', $ticket_number);
+
+                $verified_ticket = $this->resultSet();
+
+                if($post['event_id'] == '' || $ticket_number == ''){
+                    Messages::setMsg('Please select an event and input the ticket details to proceed.', 'error');
+                } else {
+
+                
+
+                    if (isset($row[0]['ticket_number']) && $row[0]['ticket_number']) {
+                        
+                        if(isset($verified_ticket[0]['ticket_number']) && $verified_ticket[0]['ticket_number'] == $ticket_number){
+
+
+                            Messages::setMsg('Uh, something is OFF! This Ticket Number has been verified already for this event. Verified name is '. $verified_ticket[0]['cust_name'] . ' with number '.$row[0]['cust_number'], 'error');
+                        
+                        }else{
+                        // echo "<pre>";
+                        // print_r($row);
+                        // echo "</pre>";
+                            Messages::setMsg('Ticket Number Valid And Purchased by '.$row[0]['cust_name'].' with number '.$row[0]['cust_number'], 'T');
+
+                            $this->query("INSERT INTO confirmed_ticket(ticket_number, cust_name, cust_number) VALUES(:t_number, :cust_name, :cust_number)");
+                            $this->bind(':t_number', $ticket_number);
+                            $this->bind(':cust_name', $row[0]['cust_name']);
+                            $this->bind(':cust_number', $row[0]['cust_number']);
+                            $this->execute();
+
+                        }
+
+                        
+                    }else {
+                        Messages::setMsg('This Ticket Number is INVALID. Please Ensure you selected the right event name', 'error');
+                    }
+
+                }
+            }
+          
+
+
+        }
+
+
     }
 
 ?>

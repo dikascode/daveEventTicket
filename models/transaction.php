@@ -152,7 +152,7 @@
                         /*********************************QR Code********************************************* */
                         $price_for_display = number_format($rows[$key-1]['price']);
                         
-                        $qr_text = "Name: ". $cust_name . ". Number: ". $cust_number. ". Event: " . $rows[$key-1]['name']. ". Ticket Class: " . $rows[$key-1]['class'] . ". Ticket Number: " . $ticket_number . ". Ticket Price:N " . $price_for_display . "";
+                        $qr_text = "Ticket Number: " . $ticket_number . ". Name: ". $cust_name . ". Number: ". $cust_number. ". Event: " . $rows[$key-1]['name']. ". Ticket Class: " . $rows[$key-1]['class'] . ". Ticket Price:N " . $price_for_display . "";
 
                         $qrImgName = "UConnect".rand();
                         //$final ="This is Dika TESTing qr testing";

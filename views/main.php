@@ -69,7 +69,7 @@
 					<button type="submit" class="form-control search"><span class="fa fa-search"></span></button>
 				</div>
 				<!-- Display search -->
-			<div id="displaySearch" style="width: 300px; height: 50px; position: absolute; top:60px; z-index: 10;"></div>
+			<div id="displaySearch"></div>
 			</form>
 
 			
