@@ -17,7 +17,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		          <div class="col-md-12 ftco-animate">
 		          	<div class="text w-100 text-center">
 		          		<h2>We're here to help you</h2>
-			            <h1 class="mb-3">Event Planner</h1>
+			            <h1 class="mb-3">BUT EVENT TICKETS WITH COMFORT</h1>
 		            </div>
 		          </div>
 		        </div>
@@ -30,8 +30,8 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
 		          <div class="col-md-12 ftco-animate">
 		          	<div class="text w-100 text-center">
-		          		<h2>Best Event Planner in the World</h2>
-			            <h1 class="mb-3">We Make Events a Success</h1>
+		          		<h2>Nigeria's number one event ticketing website</h2>
+			            <h1 class="mb-3">YOUR EVENT IS OUR PRIORITY</h1>
 		            </div>
 		          </div>
 		        </div>
@@ -44,8 +44,8 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	          <div class="row no-gutters slider-text align-items-center justify-content-center">
 		          <div class="col-md-12 ftco-animate">
 		          	<div class="text w-100 text-center">
-		          		<h2>We Plan and It's a Goal</h2>
-			            <h1 class="mb-3">Most Innovative Event Planner</h1>
+		          		<h2>Buying your event tickets easier, safer and quicker</h2>
+			            <h1 class="mb-3">DO IT QUICKER AND SAFER</h1>
 		            </div>
 		          </div>
 		        </div>

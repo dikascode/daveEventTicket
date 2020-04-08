@@ -9,7 +9,7 @@
     // define("DB_HOST", "localhost");
     // define("DB_USER", "root");
     // define("DB_PASS", "");
-    // define("DB_NAME", "dave_ticket");
+    // define("DB_NAME", "uconnect");
 
     //define URl
     define("ROOT_PATH", "/index");

@@ -86,6 +86,12 @@
 	
 
     <div class="container-fluid">
+		<div class="row">
+			<div id="aboutus" style="padding: 7%" class="col-md">
+				<h1 style="color:#FDBE34">ABOUT US</h1>
+				<h4 style="color:white">We are an innovative team helping event planners sell and manage tickets easier and quicker with utmost security using tech</h4>
+			</div>
+		</div>
 
             <div class="row">
                 <div class="col-md">
@@ -117,7 +123,7 @@
 						<div class="row">
 							<div class="col-md-4 mb-md-0 mb-4">
 								<h2 class="footer-heading">About us</h2>
-								<p>We are an innovative team that's helping businesses execute successful events using tech.</p>
+								<p>We are an innovative team helping event planners sell and manage tickets easier and quicker with utmost security using tech.</p>
 								<ul class="ftco-footer-social p-0">
 		              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
 		              <li class="ftco-animate"><a href="https://www.facebook.com/uconnect.ng" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
