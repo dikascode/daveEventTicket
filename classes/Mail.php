@@ -12,7 +12,7 @@ require 'PHPMailer-master/src/SMTP.php';
         public static function sendEmail($cust_email, $subject, $mailContent, $path = "") {
             $mail = new PHPMailer();
            // $mail->isSendmail(); // disable SMTP for local host testing
-           // $mail->isSMTP(); // Enable SMTP for gmail
+            $mail->isSMTP(); // Enable SMTP for gmail
             $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
             $mail->SMTPAuth = true; // authentication enabled
             $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
