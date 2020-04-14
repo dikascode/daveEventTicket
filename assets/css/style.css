@@ -5,11 +5,16 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
- #aboutus {
+ #aboutUs {
   background-image: url(../images/22033.jpg);
   background-attachment: fixed;
   background-size: cover;
  }
+
+ #aboutUs p {
+  font-size: 25px;
+ }
+
 #displaySearch {
   width: 300px; 
   height: 50px; 
@@ -20,7 +25,11 @@
 
 @media (max-width: 400px) {
   #displaySearch {
-    top:90px;  } 
+    top:90px;  }
+
+  #aboutUs p {
+      font-size: 15px;
+    }
 }
 
 

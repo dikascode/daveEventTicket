@@ -87,9 +87,9 @@
 
     <div class="container-fluid">
 		<div class="row">
-			<div id="aboutus" style="padding: 7%" class="col-md">
+			<div id="aboutUs" style="padding-left: 7%" class="col-md">
 				<h1 style="color:#FDBE34">ABOUT US</h1>
-				<h4 style="color:white">We are an innovative team helping event planners sell and manage tickets easier and quicker with utmost security using tech</h4>
+				<p style="color:white">We are an innovative team helping event planners sell and manage tickets easier and quicker with utmost security using tech</p>
 			</div>
 		</div>
 
@@ -104,8 +104,8 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-						//include($view);
-						include(lcfirst($view)); //remove lcfirst() if working in localhost
+						include($view);
+						//include(lcfirst($view)); //remove lcfirst() if working in localhost
 					?>
                 </div>
             </div>
