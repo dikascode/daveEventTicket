@@ -24,7 +24,7 @@
                     <p>{$message}</p>
                     
                     ";
-                    Mails::sendEmail('northwrite19@gmail.com', $subject, $htmlBody);
+                    Mails::sendEmail('uconnect.ng1@gmail.com', $subject, $htmlBody);
 
                     Messages::setMsg(''.$name.', thanks for reaching out. Your message has been sent successfully. We will reply ASAP', 'Message');
                 }
