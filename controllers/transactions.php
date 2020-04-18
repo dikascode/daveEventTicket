@@ -5,9 +5,9 @@ class Transactions extends Controller {
         $this->returnView($viewmodel->Index(), true);
     }
 
-    protected function t_fail() {
+    protected function fail() {
         $viewmodel = new TransactionModel();
-        $this->returnView($viewmodel->t_fail(), true);
+        $this->returnView($viewmodel->fail(), true);
     }
 
 

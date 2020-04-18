@@ -1,8 +1,8 @@
 <?php
     class Category extends Controller {
-        protected function Index() {
+        protected function view() {
             $viewmodel = new CategoryModel();
-            $this->returnView($viewmodel->Index(), true);
+            $this->returnView($viewmodel->view(), true);
         }
     }
 

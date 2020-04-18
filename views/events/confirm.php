@@ -22,7 +22,7 @@
                 <label for="event_name">Event Name</label>
 
                 <select name="event_id" id="" class="form-control">
-                    <option value="">Select Category</option>
+                    <option value="">Select Event</option>
                     <?php
                     foreach ($events as $row):
                     ?>

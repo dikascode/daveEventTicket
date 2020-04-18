@@ -1,0 +1,2 @@
+<h3  style="color:red">Oh mine, so sorry but looks like your transaction failed. We can't say for sure what went wrong.</h3>
+<p style="color:red">Please go back <a href="<?php echo ROOT_URL ?>">HOME</a> to retry and please make sure your card details are correct.</p>

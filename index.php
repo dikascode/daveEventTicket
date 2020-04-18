@@ -66,11 +66,11 @@ $rave = <<<DELIMETER
     
 
 
-    var flw_ref = "", chargeResponse = "", trxref = "UCONNECT"+ Math.random(), API_publicKey = "FLWPUBK_TEST-6921d097ab745d1e299bccf98fbc7ac1-X";
+    var flw_ref = "", chargeResponse = "", trxref = "UCONNECT"+ Math.random(), API_publicKey = "FLWPUBK_TEST-d6f4e974028b46334e8689fa520f4078-X";
 
     getpaidSetup(
       {
-        PBFPubKey: "FLWPUBK_TEST-6921d097ab745d1e299bccf98fbc7ac1-X",
+        PBFPubKey: "FLWPUBK_TEST-d6f4e974028b46334e8689fa520f4078-X",
       	customer_email: cust_email,
       	amount: {$_SESSION['ticket_total_price']},
         customer_phone: cust_number,
@@ -85,9 +85,9 @@ $rave = <<<DELIMETER
           amount = {$_SESSION['ticket_total_price']};
           txref = response.tx.txRef, chargeResponse = response.tx.chargeResponseCode;
           if (chargeResponse == "00" || chargeResponse == "0") {
-            window.location = "index?controller=transactions&txref="+txref+"&amt="+amount+"&cur="+currency+"&name="+cust_name; //Add your success page here
+            window.location = "index/transactions/"+txref+"/"+amount+"/"+currency+"/"+cust_name; //Add your success page here
           } else {
-            window.location = "index?controller=transactions&action=t_fail";  //Add your failure page here
+            window.location = "index/transactions/fail/";  //Add your failure page here
           }
         }
       }
@@ -100,6 +100,7 @@ DELIMETER;
 
 echo $rave;
 // https://youconnect.herokuapp.com/
+// window.location = "index?controller=transactions&txref="+txref+"&amt="+amount+"&cur="+currency+"&name="+cust_name;
     }
 
 }

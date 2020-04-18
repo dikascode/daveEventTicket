@@ -25,7 +25,7 @@
                 
         
                 $query = array(
-                    "SECKEY" => "FLWSECK_TEST-43447f6d36fea2e95bef93811139fcb8-X",
+                    "SECKEY" => "FLWSECK_TEST-0b98458cb38bee1a568f34856ce12111-X",
                     "txref" => $ref
                 );
         
@@ -157,13 +157,13 @@
                         $qrImgName = "UConnect".rand();
                         //$final ="This is Dika TESTing qr testing";
 
-                        $qrs = QRcode::png($qr_text,"classes/userQr/$qrImgName.png","H","3","3");
+                        $qrs = QRcode::png($qr_text,"../../../classes/userQr/$qrImgName.png","H","3","3");
                         $qrimage = $qrImgName.".png";
 
                         //$workDir = $_SERVER['HTTP_HOST'];
                         // $qrlink = $workDir."/qrcode".$qrImgName.".png";
                         
-                        $path = "app/classes/userQr/{$qrimage}";
+                        $path = "../../../app/classes/userQr/{$qrimage}";
             
 
                         $htmlBody = "
@@ -220,7 +220,7 @@
     
     }
 
-    public function t_fail() {
+    public function fail() {
      return;
     }
 }

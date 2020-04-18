@@ -17,14 +17,20 @@
         protected function returnView($viewmodel, $fullview) {
             //name views folder same as class, file should also be named whatever the action is
 
-          //   $view = 'views/'. get_class($this). '/' . $this->action. '.php'; // use this for localhost
+            $view = 'views/'. get_class($this). '/' . $this->action. '.php'; // use this for localhost
 
-            $view = get_class($this). '/' . $this->action. '.php'; //deployed state is including app/views cos it's mvc
+            //$view = get_class($this). '/' . $this->action. '.php'; //deployed state is including app/views cos it's mvc
 
             if($fullview) {
                 //load main layout file (html, head tags or things you want on every single page) that wraps around view
-                include('views/main.php');
+                if($_SERVER['REQUEST_URI'] == "/daveTicket/index" || $_SERVER['REQUEST_URI'] == "/index" || $_SERVER['REQUEST_URI'] == "/daveTicket/index?" || $_SERVER['REQUEST_URI'] == "/index?" || $_SERVER['REQUEST_URI'] == "index?controller=transactions&txref=txref&amt=amount&cur=currency&name=cust_name"){
+                    include('views/main2.php');
+                } else{
+                    include('views/main.php');
+                }
+                
             } else {
+                
                 include($view);
             }
         }

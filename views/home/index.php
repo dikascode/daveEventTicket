@@ -83,7 +83,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 						<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(000); ?></span> <br>
 					<?php } ?>
 					<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[0]['date'])); ?></span> <br>
-					<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[0]['id']; ?>">Buy Ticket</a>
+					<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>/events/view/<?php echo $viewmodel[0]['id']; ?>">Buy Ticket</a>
 					</div>
 					</div>
 
@@ -113,7 +113,7 @@ $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 							<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(0000); ?></span> <br>
 							<?php } ?>
 							<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span> <br>
-							<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
+							<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>/events/view/<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
 						</div>
 						</div>
 					<?php }}?>
@@ -168,7 +168,7 @@ for($i=0; $i<count($viewmodel); $i++ ){
 			<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(0000); ?></span> <br>
 			<?php } ?>
 			<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span>  <br>
-			<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
+			<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>/events/view/<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
 			
 		</div>
 	</div>
@@ -179,7 +179,7 @@ for($i=0; $i<count($viewmodel); $i++ ){
 
 <div class="row">
 	<div class="col-md">
-		<a href="<?php echo ROOT_PATH ?>?controller=events" style="font-weight: bold; color:#FDBE34">All Events >>></a>
+		<a href="<?php echo ROOT_PATH ?>/events/index/" style="font-weight: bold; color:#FDBE34">All Events >>></a>
 	</div>
 
 </div>

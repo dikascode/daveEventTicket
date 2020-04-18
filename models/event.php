@@ -74,7 +74,7 @@
                 // echo "</pre>";
 
                 if(isset($_SESSION['total_price']) && $_SESSION['total_price'] > 0 ) {
-                    header('Location: '.ROOT_PATH."?controller=events&action=ticketSale&id=".$_GET['id']);
+                    header('Location: '.ROOT_PATH."/events/ticketSale/".$_GET['id']);
 
                 }
                 

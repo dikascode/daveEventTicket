@@ -11,17 +11,17 @@
 	<script src="https://kit.fontawesome.com/1a40728d15.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
  
-    <link rel="stylesheet" href="../../../assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     
-    <link rel="stylesheet" href="../../../assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../../assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../../../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="../../../assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
     
-    <link rel="stylesheet" href="../../../assets/css/flaticon.css">
-    <link rel="stylesheet" href="../../../assets/css/icomoon.css">
-	<link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	
 
 	<!-- <link rel="stylesheet" href="assets/css/bootstrap.css"> -->
@@ -29,8 +29,8 @@
 	<!-- Carousel for multiple items -->
 		<!-- <link rel="stylesheet" href="assets/css_cmi/animate.css"> -->
         <!-- <link rel="stylesheet" href="assets/css_cmi/style.css"> -->
-        <link rel="stylesheet" href="../../../assets/css_cmi/media-queries.css">
-		<link rel="stylesheet" href="../../../assets/css_cmi/carousel.css">
+        <link rel="stylesheet" href="assets/css_cmi/media-queries.css">
+		<link rel="stylesheet" href="assets/css_cmi/carousel.css">
 	
 		<!-- Social media share plugin -->
 		<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e8611a636c81b0012fbae5b&product=inline-share-buttons" async="async"></script>
@@ -41,7 +41,7 @@
     <div class="container pt-2">
 			<div class="row justify-content-between">
 				<div class="col">
-					<a class="navbar-brand" href="<?php echo ROOT_URL; ?>" style="margin:0;"><img style="width: 200px; margin:0px;" src="../../../assets/images/logo.png" alt="Uconnect Logo" ><br> <span style="color: #010101"></span></a>
+					<a class="navbar-brand" href="<?php echo ROOT_URL; ?>" style="margin:0;"><img style="width: 200px; margin:0px;" src="assets/images/logo.png" alt="Uconnect Logo" ><br> <span style="color: #010101"></span></a>
 				</div>
 				<div class="col d-flex justify-content-end">
 					<div class="social-media">
@@ -66,7 +66,7 @@
 			<form action="#" class="searchform order-lg-last">
 				<div class="form-group d-flex">
 					<input id="search" type="text" class="form-control pl-3" placeholder="Search Event Name">
-					<button type="submit" class="form-control search"><span class="fa fa-search"></span></button>
+					<button class="form-control search"><span class="fa fa-search"></span></button>
 				</div>
 				<!-- Display search -->
 			<div id="displaySearch"></div>
@@ -171,32 +171,32 @@
  
 
 
-  <script src="../../../assets/js/jquery.min.js"></script>
-  <script src="../../../assets/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="../../../assets/js/popper.min.js"></script>
-  <script src="../../../assets/js/bootstrap.min.js"></script>
-  <script src="../../../assets/js/jquery.easing.1.3.js"></script>
-  <script src="../../../assets/js/jquery.waypoints.min.js"></script>
-  <script src="../../../assets/js/jquery.stellar.min.js"></script>
-  <script src="../../../assets/js/jquery.animateNumber.min.js"></script>
-  <script src="../../../assets/js/owl.carousel.min.js"></script>
-  <script src="../../../assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="../../../assets/js/scrollax.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.stellar.min.js"></script>
+  <script src="assets/js/jquery.animateNumber.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/scrollax.min.js"></script>
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <!-- <script src="assets/js/google-map.js"></script> -->
-  <script src="../../../assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
  
 
 
   <!-- Carousel Script for multiple items -->
-	 	<script src="../../../assets/js_cmi/jquery-3.3.1.min.js"></script>
-		<script src="../../../assets/js_cmi/jquery-migrate-3.0.0.min.js"></script>
+	 	<script src="assets/js_cmi/jquery-3.3.1.min.js"></script>
+		<script src="assets/js_cmi/jquery-migrate-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-        <script src="../../../assets/js_cmi/jquery.backstretch.min.js"></script>
-        <script src="../../../assets/js_cmi/wow.min.js"></script>
-        <script src="../../../assets/js_cmi/scripts.js"></script>
+        <script src="assets/js_cmi/jquery.backstretch.min.js"></script>
+        <script src="assets/js_cmi/wow.min.js"></script>
+        <script src="assets/js_cmi/scripts.js"></script>
     
   </body>
 </html>

@@ -28,7 +28,7 @@ for($i=0; $i<count($viewmodel); $i++ ){
 ?>
 	<div style="margin-bottom: 3%;" class="col-12 col-sm-6 col-md-3 col-lg-3">
 		<div  style="background-color:#00043C; border-radius: 15px;">
-			<img src="assets/images/<?php echo $viewmodel[$i]['small_image']; ?>" class="img-fluid mx-auto" alt="<?php echo $viewmodel[$i]['small_image']; ?>"> <br />
+			<img src="../../../assets/images/<?php echo $viewmodel[$i]['small_image']; ?>" class="img-fluid mx-auto" alt="<?php echo $viewmodel[$i]['small_image']; ?>"> <br />
 			<span style="margin-left: 5%; font-weight: bold;  color:#FDBE34;"><?php echo substr($viewmodel[$i]['name'], 0, 30); ?></span> <br>
 			<span style="margin-left: 5%; color:white;"><i class="fa fa-map-marker"></i> <?php echo substr($viewmodel[$i]['location'], 0, 30); ?></span> <br>
 			<?php $rows = mysqli_fetch_array($result); if($rows['event_id'] == $viewmodel[$i]['id']) { ?>
@@ -37,7 +37,7 @@ for($i=0; $i<count($viewmodel); $i++ ){
 			<span class="badge badge-primary" style="margin-left: 5%; color:white;">&#8358; <?php echo number_format(0000); ?></span> <br>
 			<?php } ?>
 			<span style="margin-left: 5%; color:#FDBE34;"><?php echo date('d F, Y', strtotime($viewmodel[$i]['date'])); ?></span> <br>
-			<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
+			<a style="margin-left: 5%; background-color: #FDBE34; color:#00043C;" class="btn" href="<?php echo ROOT_PATH; ?>/events/view/<?php echo $viewmodel[$i]['id']; ?>">Buy Ticket</a>
 		</div>
 	</div>
 	
@@ -72,7 +72,7 @@ foreach ($categories as $row):
 ?>
 
     <div class="col-md-3">
-    <a href="<?php echo ROOT_PATH; ?>?controller=category&id=<?php echo $row['cat_id']; ?>">
+    <a href="<?php echo ROOT_PATH; ?>/category/view/<?php echo $row['cat_id']; ?>">
         <div class="cat_display">
          <?php echo $row['cat_title']; ?> 
         </div>

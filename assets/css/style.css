@@ -8193,10 +8193,9 @@ h1, h2, h3, h4, h5,
 
 .navbar-brand {
   color: #000000;
-  font-weight: 800;
-  font-size: 30px;
+  font-size: 15px;
   line-height: 1;
-  margin-bottom: 30px; }
+  margin-bottom: 5px; }
   .navbar-brand span {
     color: #fdbe34; }
   .navbar-brand:hover, .navbar-brand:focus {

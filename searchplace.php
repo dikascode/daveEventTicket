@@ -27,7 +27,7 @@
 
 
 <div style="background-color: rgba(0, 0, 0, 0.7); padding: 10px; margin-bottom: 1%; line-height: 15px; min-width:200px;">
-	<a href="<?php echo ROOT_PATH; ?>?controller=events&action=view&id=<?php echo $value['id']; ?>">
+	<a href="<?php echo ROOT_PATH; ?>/events/view/<?php echo $value['id']; ?>">
     <p style="font-weight: bold; margin-top: 1px; margin-bottom: 5px; color:white;"><?php echo $value['name']; ?></p>
     <p style="font-style: italic; margin-top: 1px; margin-bottom: 1px;"><?php echo date('d F, Y', strtotime($value['date'])); ?></p>
    </a>
