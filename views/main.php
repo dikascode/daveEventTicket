@@ -10,6 +10,11 @@
 	<!-- New Font Awesome link -->
 	<script src="https://kit.fontawesome.com/1a40728d15.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+	<!-- Favicon -->
+
+	<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
  
     <link rel="stylesheet" href="../../../assets/css/animate.css">
     
@@ -104,8 +109,8 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-						include($view);
-						//include(lcfirst($view)); //remove lcfirst() if working in localhost
+						//include($view);
+						include(lcfirst($view)); //remove lcfirst() if working in localhost
 					?>
                 </div>
             </div>
