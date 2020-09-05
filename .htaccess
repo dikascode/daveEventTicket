@@ -3,7 +3,7 @@ RewriteEngine on
 
 RewriteRule ^index?$ index.php
 
-RewriteRule ^index/([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9])?/?$ index.php?controller=$1&action=$2&id=$3
+RewriteRule ^index/([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php?controller=$1&action=$2&id=$3
 
 
 

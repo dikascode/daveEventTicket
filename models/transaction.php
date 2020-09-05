@@ -157,13 +157,13 @@
                         $qrImgName = "UConnect".rand();
                         //$final ="This is Dika TESTing qr testing";
 
-                        $qrs = QRcode::png($qr_text,"../../../classes/userQr/$qrImgName.png","H","3","3");
+                        $qrs = QRcode::png($qr_text,"classes/userQr/$qrImgName.png","H","3","3");
                         $qrimage = $qrImgName.".png";
 
                         //$workDir = $_SERVER['HTTP_HOST'];
                         // $qrlink = $workDir."/qrcode".$qrImgName.".png";
                         
-                        $path = "../../../app/classes/userQr/{$qrimage}";
+                        $path = "classes/userQr/{$qrimage}";
             
 
                         $htmlBody = "

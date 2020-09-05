@@ -109,8 +109,8 @@
 				?>
                     <?php Messages::display(); ?>
 					<?php 
-						//include($view);
-						include(lcfirst($view)); //remove lcfirst() if working in localhost
+						include($view);
+						//include(lcfirst($view)); //remove lcfirst() if working in localhost
 					?>
                 </div>
             </div>

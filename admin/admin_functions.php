@@ -638,9 +638,9 @@ function login_user(){
     
             if(mysqli_num_rows($query) === 0){
                 set_message('Your Username or Password is wrong');
-                redirect("https://youconnect.herokuapp.com/admin/login.php");
+                //redirect("https://youconnect.herokuapp.com/admin/login.php");
                 
-                // redirect("http://localhost/daveTicket/admin/login.php");
+                redirect("http://localhost/daveTicket/admin/login.php");
             }else{
                 $_SESSION['username'] = $username;
                 set_message('Welcome to Admin, ' .$username. '');

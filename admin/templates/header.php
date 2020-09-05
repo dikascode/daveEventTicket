@@ -18,7 +18,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>You Connect Admin</title>
+    <title>UConnect Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
